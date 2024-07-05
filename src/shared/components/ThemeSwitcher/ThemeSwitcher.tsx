@@ -8,7 +8,7 @@ interface ThemeSwitcher {
 }
 
 const ThemeSwitcher: FunctionComponent<ThemeSwitcher> = ({className}) => {
-  const {theme, toggleTheme} = useTheme();
+  const {toggleTheme} = useTheme();
 
   return (
     <button
