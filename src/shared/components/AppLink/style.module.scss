@@ -1,11 +1,11 @@
 .appLink {
   text-decoration: none;
-}
 
-.primary {
-  color: #ffffff;
-}
+  &.primary {
+    color: #ffffff;
+  }
 
-.secondary {
-  color: #bbbbbb;
+  &.secondary {
+    color: #bbbbbb;
+  }
 }
