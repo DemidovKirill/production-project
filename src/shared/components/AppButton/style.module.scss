@@ -1,10 +1,17 @@
 .appButton {
   cursor: pointer;
+  transition: all 0.1s linear;
 
   &.primary {
     background-color: lightsalmon;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
+  }
+
+  &.clear {
+    background-color: transparent;
+    border: none;
+    outline: none;
   }
 }

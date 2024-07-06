@@ -4,12 +4,13 @@ import style from './style.module.scss';
 
 export enum ButtonAppearance {
   PRIMARY = 'primary',
-  SECONDARY = 'secondary'
+  SECONDARY = 'secondary',
+  CLEAR = 'clear',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  appearance?: ButtonAppearance;
+  appearance?: ButtonAppearance[];
 }
 
 const AppButton: FunctionComponent<AppButtonProps> = props => {
@@ -17,7 +18,7 @@ const AppButton: FunctionComponent<AppButtonProps> = props => {
 
   return (
     <button
-      className={classNames(style.appButton, {}, [className, appearance])}
+      className={classNames(style.appButton, {}, [className, ...appearance])}
       {...otherProps}
     >
       {children}

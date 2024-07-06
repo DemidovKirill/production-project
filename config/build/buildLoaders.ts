@@ -3,25 +3,23 @@ import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
-  const fileLoader = {
+  const fileLoader: RuleSetRule = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-    use: [{
-      loader: "file-loader",
-    }]
-  };
+    type: 'asset/resource',
+  }
 
-  const svgLoader = {
+  const svgLoader: RuleSetRule = {
     test: /\.svg$/,
-    use: '@svgr-webpack',
-  };
+    use: ['@svgr/webpack', 'url-loader'],
+  }
 
-  const typescriptLoader =     {
+  const typescriptLoader: RuleSetRule =     {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/
   };
 
-  const styleLoader = {
+  const styleLoader: RuleSetRule = {
       test: /\.s[ac]ss$/i,
       use: [
         options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
@@ -30,7 +28,7 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
           options: {
             modules: {
               auto: /\.module\./,
-              localIdentName: options.isDev ? '[local]' : '[hash:base64:8]'
+              localIdentName: '[local]'
             }
           }
         },
