@@ -9,4 +9,9 @@
   &.collapsed {
     width: var(--sidebar-width-collapsed);
   }
+
+  &__switchers {
+    display: flex;
+    gap: 15px;
+  }
 }
