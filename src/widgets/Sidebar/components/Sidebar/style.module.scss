@@ -1,0 +1,12 @@
+.sidebar {
+  position: relative;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+
+  background-color: firebrick;
+  transition: width 0.2s ease-in-out;
+
+  &.collapsed {
+    width: var(--sidebar-width-collapsed);
+  }
+}

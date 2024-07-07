@@ -13,3 +13,11 @@ body {
 
   min-height: 100vh;
 }
+
+.pade-content {
+  display: flex;
+}
+
+.main {
+  flex-grow: 1;
+}
