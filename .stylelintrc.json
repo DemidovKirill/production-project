@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "color-hex-length": "long",
+    "selector-class-pattern": null,
+    "at-rule-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "custom-property-empty-line-before":  null,
+    "declaration-empty-line-before": null,
+    "rule-empty-line-before":  null
+  }
+}
