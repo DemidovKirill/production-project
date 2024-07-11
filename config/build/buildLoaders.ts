@@ -13,11 +13,32 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     use: ['@svgr/webpack', 'url-loader'],
   }
 
-  const typescriptLoader: RuleSetRule =     {
+  const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/
   };
+
+  const babelLoader: RuleSetRule = {
+    test: /\.(js|jsx|tsx|ts)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              "nsSeparator": "~",
+              locales: ['en', 'ru'],
+              keyAsDefaultValue: true
+            }
+          ],
+        ]
+      }
+    }
+  }
 
   const styleLoader: RuleSetRule = {
       test: /\.s[ac]ss$/i,
@@ -37,6 +58,7 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     }
 
   return [
+    babelLoader,
     typescriptLoader,
     styleLoader,
     svgLoader,
