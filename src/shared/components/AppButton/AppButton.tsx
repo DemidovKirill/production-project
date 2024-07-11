@@ -1,5 +1,5 @@
-import {ButtonHTMLAttributes, FunctionComponent} from 'react';
-import { classNames } from "shared/lib/classNames";
+import { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import { classNames } from 'shared/lib/classNames';
 import style from './style.module.scss';
 
 export enum ButtonAppearance {
@@ -13,11 +13,14 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   appearance?: ButtonAppearance[];
 }
 
-const AppButton: FunctionComponent<AppButtonProps> = props => {
-  const {appearance = ButtonAppearance.PRIMARY, className, children, ...otherProps} = props;
+const AppButton: FunctionComponent<AppButtonProps> = (props) => {
+  const {
+    appearance = ButtonAppearance.PRIMARY, className, children, ...otherProps
+  } = props;
 
   return (
     <button
+      type="button"
       className={classNames(style.appButton, {}, [className, ...appearance])}
       {...otherProps}
     >

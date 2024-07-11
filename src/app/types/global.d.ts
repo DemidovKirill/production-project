@@ -2,7 +2,7 @@ declare module '*.scss' {
   interface IClassName {
     [className: string]: string
   }
-  
+
   const classNames: IClassName;
   export = classNames;
 }
@@ -19,9 +19,10 @@ declare module '*.svg?inline' {
 
 declare module '*.svg' {
   import React = require('react');
+
   export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
   const src: string;
   export default src;
 }
 
-declare const __IS_DEV__: boolean
+declare const __IS_DEV__: boolean;

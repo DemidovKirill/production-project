@@ -1,3 +1,3 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-export const MainPageLazy = lazy(() => import(/* webpackChunkName: "main_page"*/'./MainPage'));
+export const MainPageLazy = lazy(() => import(/* webpackChunkName: "main_page" */'./MainPage'));
