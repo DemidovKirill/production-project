@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FunctionComponent } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import style from './style.module.scss';
 
 export enum ButtonAppearance {

@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Link, LinkProps } from 'react-router-dom';
 import style from './style.module.scss';
 

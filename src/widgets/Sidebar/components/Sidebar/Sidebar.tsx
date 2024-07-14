@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import AppButton, { ButtonAppearance } from 'shared/components/AppButton/AppButton';
 import ThemeSwitcher from 'shared/components/ThemeSwitcher/ThemeSwitcher';
 import LanguageSwitcher from 'shared/components/LanguageSwitcher/LanguageSwitcher';

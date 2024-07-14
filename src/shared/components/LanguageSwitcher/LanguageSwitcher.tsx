@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import AppButton from 'shared/components/AppButton/AppButton';
 

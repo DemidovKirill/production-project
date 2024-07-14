@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Theme, useTheme } from 'shared/contexts/theme-context';
 import { ReactComponent as DarkThemeIcon } from 'shared/assets/icon/theme/theme-dark.svg';
 import { ReactComponent as LightThemeIcon } from 'shared/assets/icon/theme/theme-light.svg';

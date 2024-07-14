@@ -37,6 +37,7 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
+    'max-len': ['error', {'ignoreComments': true}],
   },
   globals: {
     __IS_DEV__: true,
