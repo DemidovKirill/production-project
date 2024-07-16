@@ -2,9 +2,9 @@ import { ResolveOptions } from 'webpack';
 import { BuildOptions } from './types/config';
 
 export const buildResolvers = (options: BuildOptions): ResolveOptions => ({
-  extensions: ['.ts', '.tsx', '.js', '.jsx'],
-  preferAbsolute: true,
-  modules: [options.paths.src, 'node_modules'],
-  mainFiles: ['index'],
-  alias: {},
+  'extensions': ['.ts', '.tsx', '.js', '.jsx'],
+  'preferAbsolute': true,
+  'modules': [options.paths.src, 'node_modules'],
+  'mainFiles': ['index'],
+  'alias': {},
 });

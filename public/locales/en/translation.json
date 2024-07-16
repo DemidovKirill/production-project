@@ -3,5 +3,6 @@
   "changeLanguage": "Change language",
   "mainPageLink": "MAIN",
   "aboutPageLink": "ABOUT",
-  "notFound": "Page not found"
+  "notFound": "Page not found",
+  "toggle": "Toggle"
 }

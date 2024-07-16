@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
 import style from './style.module.scss';
-import {classNames} from "shared/lib/classNames/classNames";
 
 export const NotFound = () => {
   const { t } = useTranslation();

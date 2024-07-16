@@ -3,5 +3,6 @@
   "changeLanguage": "Сменить язык",
   "mainPageLink": "ГЛАВНАЯ",
   "aboutPageLink": "О НАС",
-  "notFound": "Страница не найдена"
+  "notFound": "Страница не найдена",
+  "toggle": "Переключить"
 }
