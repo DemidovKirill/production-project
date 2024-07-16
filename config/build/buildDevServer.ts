@@ -6,4 +6,7 @@ export const buildDevServer = (options: BuildOptions): DevServerConfiguration =>
   'open': true,
   'historyApiFallback': true,
   'hot': true,
+  'client': {
+    'overlay': false,
+  },
 });

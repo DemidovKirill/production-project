@@ -4,5 +4,7 @@
   "mainPageLink": "ГЛАВНАЯ",
   "aboutPageLink": "О НАС",
   "notFound": "Страница не найдена",
-  "toggle": "Переключить"
+  "toggle": "Переключить",
+  "pageError": "Ошибка на странице",
+  "reloadPage": "Обновить страницу"
 }

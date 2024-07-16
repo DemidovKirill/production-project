@@ -4,5 +4,7 @@
   "mainPageLink": "MAIN",
   "aboutPageLink": "ABOUT",
   "notFound": "Page not found",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "pageError": "Page Error",
+  "reloadPage": "Reload page"
 }

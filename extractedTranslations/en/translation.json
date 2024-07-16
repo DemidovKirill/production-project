@@ -2,5 +2,7 @@
   "aboutPageLink": "aboutPageLink",
   "mainPageLink": "mainPageLink",
   "notFound": "notFound",
+  "pageError": "pageError",
+  "reloadPage": "reloadPage",
   "toggle": "toggle"
 }
