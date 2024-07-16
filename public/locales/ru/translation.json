@@ -2,5 +2,6 @@
   "greeting": "Привет Мир",
   "changeLanguage": "Сменить язык",
   "mainPageLink": "ГЛАВНАЯ",
-  "aboutPageLink": "О НАС"
+  "aboutPageLink": "О НАС",
+  "notFound": "Страница не найдена"
 }
