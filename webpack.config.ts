@@ -18,6 +18,7 @@ export default (env: BuildEnv) => {
     mode,
     paths,
     isDev,
+    'analyze': env.analyze,
     'port': env.port || 3000,
   });
 
