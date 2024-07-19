@@ -21,7 +21,7 @@ const AppButton: FunctionComponent<AppButtonProps> = (props) => {
   return (
     <button
       type="button"
-      className={classNames(style.appButton, {}, [className, ...appearance])}
+      className={classNames(style['app-button'], {}, [className, ...appearance])}
       {...otherProps}
     >
       {children}
