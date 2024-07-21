@@ -2,10 +2,10 @@
   text-decoration: none;
 
   &.primary {
-    color: #ffffff;
+    color: var(--primary-color);
   }
 
   &.secondary {
-    color: #bbbbbb;
+    color: var(--secondary-color);
   }
 }

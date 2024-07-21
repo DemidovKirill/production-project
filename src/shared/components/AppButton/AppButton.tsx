@@ -6,6 +6,7 @@ export enum ButtonAppearance {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   CLEAR = 'clear',
+  OUTLINED = 'outlined',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,13 +16,19 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const AppButton: FunctionComponent<AppButtonProps> = (props) => {
   const {
-    appearance = ButtonAppearance.PRIMARY, className, children, ...otherProps
+    appearance = [ButtonAppearance.PRIMARY],
+    className,
+    children,
+    ...otherProps
   } = props;
 
   return (
     <button
       type="button"
-      className={classNames(style['app-button'], {}, [className, ...appearance])}
+      className={classNames(style['app-button'], {}, [
+        className,
+        ...appearance,
+      ])}
       {...otherProps}
     >
       {children}
