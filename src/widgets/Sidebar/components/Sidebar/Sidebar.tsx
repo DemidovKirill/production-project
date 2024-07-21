@@ -1,9 +1,9 @@
 import { FunctionComponent, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import AppButton, { ButtonAppearance } from 'shared/components/AppButton/AppButton';
-import ThemeSwitcher from 'shared/components/ThemeSwitcher/ThemeSwitcher';
-import LanguageSwitcher from 'shared/components/LanguageSwitcher/LanguageSwitcher';
+import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
 import { useTranslation } from 'react-i18next';
+import { ThemeSwitcher } from 'shared/components/ThemeSwitcher';
+import { LanguageSwitcher } from 'shared/components/LanguageSwitcher';
 import style from './style.module.scss';
 
 interface SidebarProps {
@@ -19,8 +19,15 @@ export const Sidebar: FunctionComponent<SidebarProps> = ({ className }) => {
   };
 
   return (
-    <div className={classNames(style.sidebar, { [style.collapsed]: collapsed }, [className])}>
-      <AppButton appearance={[ButtonAppearance.CLEAR]} onClick={onToggle}>
+    <div
+      data-testid="sidebar"
+      className={classNames(style.sidebar, { [style.collapsed]: collapsed }, [className])}
+    >
+      <AppButton
+        data-testid="sidebar-toggle-button"
+        appearance={[ButtonAppearance.CLEAR]}
+        onClick={onToggle}
+      >
         {t('toggle')}
       </AppButton>
       <div className={style.sidebar__switchers}>

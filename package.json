@@ -4,19 +4,14 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=3000",
-
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-
     "analyze:prod": "webpack --env mode=production analyze=true",
     "analyze:dev": "webpack --env mode=development analyze=true",
-
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-
     "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
@@ -26,9 +21,12 @@
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.24.7",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@svgr/webpack": "^6.5.1",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
     "@types/jest": "^29.5.12",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
@@ -51,9 +49,12 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-svg-transformer": "^1.0.0",
     "mini-css-extract-plugin": "^2.5.3",
+    "regenerator-runtime": "^0.13.9",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",

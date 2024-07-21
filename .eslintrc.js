@@ -1,30 +1,30 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
-    'jest': true,
+  env: {
+    browser: true,
+    es2021: true,
+    jest: true,
   },
-  'extends': [
+  extends: [
     'plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
   ],
-  'parser': '@typescript-eslint/parser',
-  'parserOptions': {
-    'ecmaFeatures': {
-      'jsx': true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    'ecmaVersion': 12,
-    'sourceType': 'module',
+    ecmaVersion: 12,
+    sourceType: 'module',
   },
-  'plugins': [
+  plugins: [
     'react',
     '@typescript-eslint',
     'i18next',
   ],
-  'rules': {
+  rules: {
     'react/jsx-filename-extension': [2, {
-      'extensions': ['.js', '.jsx', '.tsx'],
+      extensions: ['.js', '.jsx', '.tsx'],
     }],
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
@@ -38,13 +38,21 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
-    'max-len': ['error', { 'code': 120, 'tabWidth': 2, 'ignoreComments': true }],
+    'max-len': ['error', { code: 120, tabWidth: 2, ignoreComments: true }],
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
-    'indent': [2, 2],
-    'quote-props': [2, 'always'],
+    indent: [2, 2],
+    'linebreak-style': ['error', 'windows'],
   },
-  'globals': {
-    '__IS_DEV__': true,
+  globals: {
+    __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };

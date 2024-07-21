@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import AppButton from 'shared/components/AppButton/AppButton';
+import { AppButton } from 'shared/components/AppButton/AppButton';
 import { useEffect, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import style from './style.module.scss';

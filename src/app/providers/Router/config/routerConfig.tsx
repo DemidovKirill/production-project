@@ -6,15 +6,15 @@ import { NotFound } from 'pages/NotFound';
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
-    'path': RoutePath[AppRoutes.MAIN],
-    'element': <MainPage />,
+    path: RoutePath[AppRoutes.MAIN],
+    element: <MainPage />,
   },
   [AppRoutes.ABOUT]: {
-    'path': RoutePath[AppRoutes.ABOUT],
-    'element': <AboutPage />,
+    path: RoutePath[AppRoutes.ABOUT],
+    element: <AboutPage />,
   },
   [AppRoutes.NOT_FOUND]: {
-    'path': RoutePath[AppRoutes.NOT_FOUND],
-    'element': <NotFound />,
+    path: RoutePath[AppRoutes.NOT_FOUND],
+    element: <NotFound />,
   },
 };

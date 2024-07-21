@@ -13,7 +13,7 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   appearance?: ButtonAppearance[];
 }
 
-const AppButton: FunctionComponent<AppButtonProps> = (props) => {
+export const AppButton: FunctionComponent<AppButtonProps> = (props) => {
   const {
     appearance = ButtonAppearance.PRIMARY, className, children, ...otherProps
   } = props;
@@ -21,12 +21,10 @@ const AppButton: FunctionComponent<AppButtonProps> = (props) => {
   return (
     <button
       type="button"
-      className={classNames(style.appButton, {}, [className, ...appearance])}
+      className={classNames(style['app-button'], {}, [className, ...appearance])}
       {...otherProps}
     >
       {children}
     </button>
   );
 };
-
-export default AppButton;

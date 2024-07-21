@@ -1,13 +1,13 @@
 import { FunctionComponent } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import AppButton from 'shared/components/AppButton/AppButton';
+import { AppButton } from 'shared/components/AppButton/AppButton';
 
 interface LanguageSwitcherProps {
   className?: string
 }
 
-const LanguageSwitcher: FunctionComponent<LanguageSwitcherProps> = ({ className }) => {
+export const LanguageSwitcher: FunctionComponent<LanguageSwitcherProps> = ({ className }) => {
   const { i18n } = useTranslation();
 
   const changeLanguage = () => {
@@ -23,5 +23,3 @@ const LanguageSwitcher: FunctionComponent<LanguageSwitcherProps> = ({ className 
     </AppButton>
   );
 };
-
-export default LanguageSwitcher;

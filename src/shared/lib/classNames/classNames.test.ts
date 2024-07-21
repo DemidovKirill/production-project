@@ -17,7 +17,7 @@ describe('classNames', () => {
     expect(
       classNames(
         'className',
-        { 'hovered': true, 'selected': true },
+        { hovered: true, selected: true },
         ['class-one', 'class-two'],
       ),
     )
@@ -28,7 +28,7 @@ describe('classNames', () => {
     expect(
       classNames(
         'className',
-        { 'hovered': true, 'selected': false },
+        { hovered: true, selected: false },
         ['class-one', 'class-two'],
       ),
     )
@@ -39,7 +39,7 @@ describe('classNames', () => {
     expect(
       classNames(
         'className',
-        { 'hovered': true, 'selected': undefined },
+        { hovered: true, selected: undefined },
         ['class-one', 'class-two'],
       ),
     )
