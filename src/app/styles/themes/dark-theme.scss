@@ -1,8 +1,15 @@
-.dark-theme {
-  --background-color: #5c5e75;
-  --primary-color: #279631;
-  --secondary-color: #08ec17;
+:root {
+  --app-background: #0C1214;
+  --primary-background: #090F11;
+  --secondary-background: #151C1F;
 
-  --inverted-primary-color: lightsalmon;
-  --inverted-background-color: #5d2e1d;
+  --primary-color: #DBDBDB;
+  --secondary-color: #555555;
+
+  --error-color: #D95757;
+  --success-color: #6CD98B;
+
+  --icon-color: #74A2B2;
+
+  --accent-color: #5ED3F3;
 }

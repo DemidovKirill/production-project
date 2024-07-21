@@ -1,9 +1,9 @@
 import { FunctionComponent, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
-import { useTranslation } from 'react-i18next';
 import { ThemeSwitcher } from 'shared/components/ThemeSwitcher';
 import { LanguageSwitcher } from 'shared/components/LanguageSwitcher';
+import ToggleArrow from 'shared/assets/icon/arrow.svg';
+import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
 import style from './style.module.scss';
 
 interface SidebarProps {
@@ -12,7 +12,6 @@ interface SidebarProps {
 
 export const Sidebar: FunctionComponent<SidebarProps> = ({ className }) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const { t } = useTranslation();
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
@@ -21,18 +20,20 @@ export const Sidebar: FunctionComponent<SidebarProps> = ({ className }) => {
   return (
     <div
       data-testid="sidebar"
-      className={classNames(style.sidebar, { [style.collapsed]: collapsed }, [className])}
+      className={classNames(style.sidebar__container, { [style.collapsed]: collapsed }, [className])}
     >
-      <AppButton
-        data-testid="sidebar-toggle-button"
-        appearance={[ButtonAppearance.CLEAR]}
-        onClick={onToggle}
-      >
-        {t('toggle')}
-      </AppButton>
-      <div className={style.sidebar__switchers}>
-        <ThemeSwitcher />
-        <LanguageSwitcher />
+      <div className={style.sidebar__content}>
+        <AppButton
+          className={classNames(style['sidebar__toggle-icon'], { [style.collapsed]: collapsed }, [])}
+          onClick={onToggle}
+          appearance={[ButtonAppearance.CLEAR]}
+        >
+          <ToggleArrow />
+        </AppButton>
+        <div className={style.sidebar__switchers}>
+          <ThemeSwitcher />
+          <LanguageSwitcher />
+        </div>
       </div>
     </div>
   );

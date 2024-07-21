@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { AppButton } from 'shared/components/AppButton/AppButton';
+import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
 
 interface LanguageSwitcherProps {
   className?: string
@@ -18,6 +18,7 @@ export const LanguageSwitcher: FunctionComponent<LanguageSwitcherProps> = ({ cla
     <AppButton
       className={classNames('', {}, [className])}
       onClick={changeLanguage}
+      appearance={[ButtonAppearance.CLEAR]}
     >
       {i18n.language.toUpperCase()}
     </AppButton>

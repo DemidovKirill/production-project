@@ -1,16 +1,67 @@
 .sidebar {
-  position: relative;
-  width: var(--sidebar-width);
-  height: calc(100vh - var(--navbar-height));
-  background-color: firebrick;
-  transition: width 0.2s ease-in-out;
+  &__container {
+    position: absolute;
+    left: 25px;
+    top: 25px;
 
-  &.collapsed {
-    width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width);
+    height: 90vh;
+
+    padding: 10px 15px 20px 15px;
+
+    border-radius: 15px;
+    background-color: var(--secondary-background);
+
+    transition: width 0.2s ease-in-out;
+
+    &.collapsed {
+      width: var(--sidebar-width-collapsed);
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    height: 100%;
   }
 
   &__switchers {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    transform: translateY(-50%) rotate(90deg);
+
+    transition: all 0.2s linear;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-50%) rotate(90deg) scale(1.2);
+      transition: all 0.2s linear;
+    }
+
+    &.collapsed {
+      right: 0;
+      transform: translateY(-50%) rotate(-90deg);
+      transition: all 0.2s linear;
+    }
   }
 }
