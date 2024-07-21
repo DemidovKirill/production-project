@@ -7,6 +7,7 @@ export enum ButtonAppearance {
   SECONDARY = 'secondary',
   CLEAR = 'clear',
   OUTLINED = 'outlined',
+  ERROR = 'error',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
