@@ -42,7 +42,7 @@ module.exports = {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
   },
   globals: {
     __IS_DEV__: true,
