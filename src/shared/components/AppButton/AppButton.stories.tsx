@@ -20,13 +20,6 @@ export const Primary: Story = {
     appearance: [ButtonAppearance.PRIMARY],
   },
 };
-export const PrimaryDark: Story = {
-  args: {
-    children: 'Button',
-    appearance: [ButtonAppearance.PRIMARY],
-  },
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Secondary: Story = {
   args: {
