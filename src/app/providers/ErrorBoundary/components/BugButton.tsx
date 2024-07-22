@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { AppButton } from 'shared/components/AppButton/AppButton';
+import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
 import { useEffect, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import style from './style.module.scss';
@@ -22,6 +22,7 @@ const BugButton = () => {
     <AppButton
       onClick={throwError}
       className={classNames(style['bug-button'], {}, [])}
+      appearance={[ButtonAppearance.ERROR, ButtonAppearance.OUTLINED, ButtonAppearance.CLEAR]}
     >
       {t('createError')}
     </AppButton>

@@ -24,6 +24,7 @@ export const Sidebar: FunctionComponent<SidebarProps> = ({ className }) => {
     >
       <div className={style.sidebar__content}>
         <AppButton
+          data-testid="sidebar-toggle-button"
           className={classNames(style['sidebar__toggle-icon'], { [style.collapsed]: collapsed }, [])}
           onClick={onToggle}
           appearance={[ButtonAppearance.CLEAR]}

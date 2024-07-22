@@ -1,21 +1,21 @@
 .loader-wrapper {
-  height: calc(100vh - var(--navbar-height));
 
   display: flex;
+  flex-grow: 1;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
+  height: calc(100vh - var(--navbar-height));
 }
 
 .loader {
   width: 60px;
   aspect-ratio: 2;
-  --_g: no-repeat radial-gradient(circle closest-side,var(--success-color) 90%,#0000);
+  --dot: no-repeat radial-gradient(circle closest-side,var(--success-color) 90%,#00000000);
   background:
-          var(--_g) 0   50%,
-          var(--_g) 50%  50%,
-          var(--_g) 100% 50%;
-  background-size: calc(100%/3) 50%;
+          var(--dot) 0   50%,
+          var(--dot) 50%  50%,
+          var(--dot) 100% 50%;
+  background-size: calc(100% / 3) 50%;
   animation: l3 1s infinite linear;
 }
 @keyframes l3 {

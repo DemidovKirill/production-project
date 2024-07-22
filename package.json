@@ -20,10 +20,11 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
 
     "storybook": "storybook dev -p 6006 -c config/storybook",
-    "build-storybook": "storybook build -c config/storybook",
+    "storybook:build": "storybook build -c config/storybook",
 
     "test:loki": "loki test",
-    "test:loki:approve": "loki approve"
+    "test:loki:approve": "loki approve",
+    "test:loki:ci": "loki --requireReference --reactUri file:./storybook-static"
   },
   "keywords": [],
   "author": "",
@@ -112,14 +113,14 @@
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.app",
+        "target": "chrome.docker",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.app",
+        "target": "chrome.docker",
         "preset": "iPhone 7"
       }
     }
