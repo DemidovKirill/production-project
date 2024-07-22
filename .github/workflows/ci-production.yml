@@ -11,7 +11,7 @@ on:
 jobs:
   lint:
     name: Check code quality
-    runs-on: windows-2019
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 18.x ]
