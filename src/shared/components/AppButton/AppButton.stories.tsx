@@ -1,6 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators/theme-decorator';
-import { Theme } from 'shared/contexts/theme-context';
 import { AppButton, ButtonAppearance } from './AppButton';
 
 const meta = {
@@ -20,13 +18,6 @@ export const Primary: Story = {
     appearance: [ButtonAppearance.PRIMARY],
   },
 };
-export const PrimaryDark: Story = {
-  args: {
-    children: 'Button',
-    appearance: [ButtonAppearance.PRIMARY],
-  },
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Secondary: Story = {
   args: {
