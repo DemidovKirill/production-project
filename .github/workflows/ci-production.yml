@@ -36,5 +36,11 @@ jobs:
       - name: Run Unit testing
         run: npm run test:unit
 
+      - name: Build Storybook
+        run: npm run storybook:build
+
+      - name: Run Screenshot testing
+        run: npm run test:loki:ci
+
       - name: Build production
         run: npm run build:production
