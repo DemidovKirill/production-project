@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Link, LinkProps } from 'react-router-dom';
+import { LinkProps, NavLink } from 'react-router-dom';
 import style from './style.module.scss';
 
 export enum AppLinkTheme {
@@ -11,20 +11,23 @@ export enum AppLinkTheme {
 interface AppLinkProps extends LinkProps {
   theme?: string
   className?: string;
+  isSidebarCollapsed?: boolean
 }
 
 export const AppLink: FunctionComponent<AppLinkProps> = (props) => {
   const {
-    to, theme = AppLinkTheme.PRIMARY, className, children, ...otherProps
+    to, theme = AppLinkTheme.PRIMARY, isSidebarCollapsed, className, children, ...otherProps
   } = props;
 
+  const classNamesForLink = classNames(style['app-link'], { isSidebarCollapsed }, [className, style[theme]]);
+
   return (
-    <Link
-      className={classNames(style.appLink, {}, [className, style[theme]])}
+    <NavLink
+      className={({ isActive }) => (isActive ? `${classNamesForLink} active` : classNamesForLink)}
       to={to}
       {...otherProps}
     >
       {children}
-    </Link>
+    </NavLink>
   );
 };
