@@ -21,7 +21,7 @@ export const Overlay: FunctionComponent<OverlayProps> = ({
   };
 
   const onAnimationEnd = (event: AnimationEvent<HTMLDivElement>) => {
-    if (event.animationName === 'closeOverlay') {
+    if (event.animationName === 'close-overlay') {
       toggleShowModal?.();
     }
   };

@@ -1,4 +1,3 @@
-import { useTheme } from 'shared/contexts/theme-context';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/Router';
 import { Navbar } from 'widgets/Navbar';
