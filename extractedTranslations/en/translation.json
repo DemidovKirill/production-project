@@ -1,5 +1,6 @@
 {
   "aboutPageLink": "aboutPageLink",
+  "auth": "auth",
   "mainPageLink": "mainPageLink",
   "notFound": "notFound",
   "pageError": "pageError",

@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'shared/contexts/theme-context';
+import './app/styles/index.scss';
 
 import 'shared/config/i18n';
 import App from './app/App';
