@@ -52,7 +52,6 @@ module.exports = {
     'i18next/no-literal-string': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
-    'no-param-reassign': 'off',
   },
   globals: {
     __IS_DEV__: true,
@@ -63,6 +62,10 @@ module.exports = {
       rules: {
         'i18next/no-literal-string': 'off',
       },
+    },
+    {
+      files: ['src/**/*.slice.ts'],
+      rules: { 'no-param-reassign': ['error', { props: false }] },
     },
   ],
 };

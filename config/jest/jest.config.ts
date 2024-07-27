@@ -2,6 +2,9 @@ import type { Config } from 'jest';
 
 const config: Config = {
   rootDir: '../..',
+  globals: {
+    __IS_DEV__: true,
+  },
   clearMocks: true,
   coveragePathIgnorePatterns: [
     '\\\\node_modules\\\\',

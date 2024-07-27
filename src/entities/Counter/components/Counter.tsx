@@ -2,7 +2,7 @@ import React from 'react';
 import { AppButton } from 'shared/components/AppButton/AppButton';
 import { useAppDispatch } from 'app/providers/Store';
 import { useSelector } from 'react-redux';
-import { counterActions } from '../models/slice/counter-slice';
+import { counterActions } from '../models/slice/counter.slice';
 import { getCounterValue } from '../models/selectors/getCounterValue/getCounterValue';
 
 export const Counter = () => {
@@ -17,23 +17,12 @@ export const Counter = () => {
     dispatch(counterActions.decrement(1));
   };
 
-  const customValue = () => {
-    const value = prompt();
-    dispatch(counterActions.incrementByAmount(+value));
-  };
-
   return (
     <div>
-      <h1>
-        Value =
-        {' '}
-        {counterValue}
-      </h1>
-      <AppButton onClick={increment}>Increment</AppButton>
+      <h1 data-testid="counter-value">{counterValue}</h1>
+      <AppButton data-testid="increment-button" onClick={increment}>Increment</AppButton>
       <br />
-      <AppButton onClick={decrement}>Decrement</AppButton>
-      <br />
-      <AppButton onClick={customValue}>Custom Value</AppButton>
+      <AppButton data-testid="decrement-button" onClick={decrement}>Decrement</AppButton>
     </div>
   );
 };
