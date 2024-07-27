@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'react/jsx-filename-extension': [
       2,
@@ -43,7 +43,15 @@ module.exports = {
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
     'linebreak-style': 0,
-    //    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+
+    // HOOK's
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
+
+    // TEMPORARY
+    'i18next/no-literal-string': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
   },
   globals: {
     __IS_DEV__: true,
