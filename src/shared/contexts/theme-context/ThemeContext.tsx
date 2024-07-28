@@ -1,5 +1,5 @@
 import {
-  createContext, FunctionComponent, useEffect, useMemo, useState,
+  createContext, FunctionComponent, useMemo, useState,
 } from 'react';
 
 export enum Theme {
@@ -28,10 +28,6 @@ const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({ initialTheme, ch
     theme,
     setTheme,
   }), [theme]);
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
 
   return (
     <ThemeContext.Provider value={defaultProps}>

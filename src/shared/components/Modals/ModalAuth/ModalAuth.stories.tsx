@@ -11,6 +11,7 @@ const meta = {
   },
   args: {
     children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, sunt?',
+    container: document.body,
     isOpen: true,
   },
 } satisfies Meta<typeof ModalAuth>;
