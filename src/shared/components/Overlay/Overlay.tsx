@@ -8,12 +8,12 @@ import style from './style.module.scss';
 interface OverlayProps {
   className?: string;
   children: ReactNode;
-  toggleShowModal: () => void;
+  onClose: () => void;
   isOpen: boolean;
 }
 
 export const Overlay: FunctionComponent<OverlayProps> = ({
-  className, children, toggleShowModal, isOpen,
+  className, children, onClose, isOpen,
 }) => {
   const [opened, setOpened] = useState(isOpen);
   const { theme } = useTheme();
@@ -24,7 +24,7 @@ export const Overlay: FunctionComponent<OverlayProps> = ({
 
   const onAnimationEnd = (event: AnimationEvent<HTMLDivElement>) => {
     if (event.animationName === 'close-overlay') {
-      toggleShowModal?.();
+      onClose?.();
     }
   };
 

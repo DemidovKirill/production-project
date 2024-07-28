@@ -7,5 +7,6 @@
   "toggle": "Toggle",
   "pageError": "Page Error",
   "reloadPage": "Reload page",
-  "auth": "Auth"
+  "auth": "Auth",
+  "signIn": "Sign In"
 }
