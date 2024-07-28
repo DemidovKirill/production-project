@@ -16,6 +16,21 @@ const preview: Preview = {
   },
 };
 
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', title: 'English' },
+        { value: 'ru', title: 'Russia' },
+      ],
+      showName: true,
+    },
+  },
+};
+
 export const decorators = [StyleDecorator, RouterDecorator, ThemeDecorator(Theme.DARK), TranslateDecorator];
 
 export default preview;

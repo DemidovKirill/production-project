@@ -2,6 +2,7 @@ import React, {
   AnimationEvent, FunctionComponent, ReactNode, useCallback, useEffect, useMemo, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useTheme } from 'shared/contexts/theme-context';
 import style from './style.module.scss';
 
 interface OverlayProps {
@@ -15,6 +16,7 @@ export const Overlay: FunctionComponent<OverlayProps> = ({
   className, children, toggleShowModal, isOpen,
 }) => {
   const [opened, setOpened] = useState(isOpen);
+  const { theme } = useTheme();
 
   const handleClose = () => {
     setOpened(false);
@@ -47,7 +49,7 @@ export const Overlay: FunctionComponent<OverlayProps> = ({
 
   return (
     <div
-      className={classNames(style.overlay, mods, [className])}
+      className={classNames(style.overlay, mods, [className, theme])}
       onClick={handleClose}
       onAnimationEnd={onAnimationEnd}
     >
