@@ -4,7 +4,9 @@
   "mainPageLink": "mainPageLink",
   "notFound": "notFound",
   "pageError": "pageError",
+  "password": "password",
   "reloadPage": "reloadPage",
   "signIn": "signIn",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "username": "username"
 }

@@ -21,8 +21,8 @@ export const AuthForm = () => {
   return (
     <div className={style['auth-form']}>
       <div className={style['auth-form__inputs']}>
-        <AppInput autoFocus label="Username:" value={value} onChange={onChange} />
-        <AppInput label="Password:" />
+        <AppInput autoFocus label={`${t('username')}:`} value={value} onChange={onChange} />
+        <AppInput label={`${t('password')}:`} />
       </div>
       <AppButton>{t('signIn')}</AppButton>
     </div>

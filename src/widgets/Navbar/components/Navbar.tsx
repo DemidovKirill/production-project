@@ -24,7 +24,7 @@ export const Navbar: FunctionComponent<NavbarProps> = ({ className }) => {
   return (
     <div className={classNames(style.navbar, {}, [className])}>
       <AppButton appearance={[ButtonAppearance.CLEAR]} onClick={onOpenModal}>
-        {t('auth')}
+        {t('signIn')}
       </AppButton>
       <AuthModal isOpen={isOpen} onClose={onCloseModal} />
     </div>
