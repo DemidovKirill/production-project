@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/theme-decorator';
 import { Theme } from 'shared/contexts/theme-context';
-import { ModalAuth } from './ModalAuth';
+import { AuthModal } from './AuthModal';
 
 const meta = {
-  title: 'shared/ModalAuth',
-  component: ModalAuth,
+  title: 'features/AuthModal',
+  component: AuthModal,
   parameters: {
     layout: 'centered',
   },
   args: {
-    children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, sunt?',
-    container: document.body,
     isOpen: true,
+    container: document.body,
   },
-} satisfies Meta<typeof ModalAuth>;
+} satisfies Meta<typeof AuthModal>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
