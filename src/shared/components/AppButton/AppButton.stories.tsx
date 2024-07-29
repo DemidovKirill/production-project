@@ -39,3 +39,10 @@ export const Outlined: Story = {
     appearance: [ButtonAppearance.OUTLINED],
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    disabled: true,
+  },
+};

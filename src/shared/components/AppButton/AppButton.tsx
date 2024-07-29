@@ -13,6 +13,7 @@ export enum ButtonAppearance {
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   appearance?: ButtonAppearance[];
+  disabled?: boolean;
 }
 
 export const AppButton: FunctionComponent<AppButtonProps> = (props) => {
@@ -20,13 +21,14 @@ export const AppButton: FunctionComponent<AppButtonProps> = (props) => {
     appearance = [ButtonAppearance.PRIMARY],
     className,
     children,
+    disabled,
     ...otherProps
   } = props;
 
   return (
     <button
       type="button"
-      className={classNames(style['app-button'], {}, [
+      className={classNames(style['app-button'], { [style.disabled]: disabled }, [
         className,
         ...appearance,
       ])}
