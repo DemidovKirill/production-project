@@ -10,8 +10,8 @@ export const userSlice = createSlice({
     setUserData: (state: UserSchema, action: PayloadAction<User>) => {
       state.userData = action.payload;
     },
-    initUserData: (state: UserSchema) => {
-      state.userData = null;
+    initUserData: (state: UserSchema, action: PayloadAction<User>) => {
+      state.userData = action.payload;
     },
     logout: (state: UserSchema) => {
       state.userData = null;

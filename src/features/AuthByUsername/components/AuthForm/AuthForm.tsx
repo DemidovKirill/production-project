@@ -38,7 +38,7 @@ export const AuthForm = memo(() => {
           {error}
         </div>
       )}
-      <AppButton disabled={isLoading} onClick={onSignInClick}>{t('signIn')}</AppButton>
+      <AppButton disabled={isLoading} withHover onClick={onSignInClick}>{t('signIn')}</AppButton>
     </div>
   );
 });
