@@ -31,4 +31,13 @@
   &.error {
     color: var(--error-color);
   }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.with-hover:hover {
+    box-shadow: 0 0 5px rgb(94 211 243 / 20%);
+  }
 }

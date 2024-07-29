@@ -1,30 +1,44 @@
 import { AppButton } from 'shared/components/AppButton/AppButton';
 import { useTranslation } from 'react-i18next';
 import { AppInput } from 'shared/components/AppInput/AppInput';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { authActions } from 'features/AuthByUsername';
+import { memo } from 'react';
+import { authByUsernameAsyncThunk } from '../../model/services/authByUsername/authByUsername';
+import { getAuthState } from '../../model/selectors/getAuthState/getAuthState';
 import style from './style.module.scss';
 
-// interface AuthData {
-//   username: string;
-//   password: string;
-// }
-
-export const AuthForm = () => {
+export const AuthForm = memo(() => {
   const { t } = useTranslation();
-  // const [authData, setAuthData] = useState<AuthData>({ username: '', password: '' });
-  const [value, setValue] = useState('');
+  const {
+    username, password, isLoading, error,
+  } = useSelector(getAuthState);
+  const dispatch = useDispatch();
 
-  const onChange = (value: string) => {
-    setValue(value);
+  const onUsernameChange = (value: string) => {
+    dispatch(authActions.setUsername(value));
+  };
+
+  const onPasswordChange = (value: string) => {
+    dispatch(authActions.setPassword(value));
+  };
+
+  const onSignInClick = () => {
+    dispatch(authByUsernameAsyncThunk({ username, password }));
   };
 
   return (
     <div className={style['auth-form']}>
       <div className={style['auth-form__inputs']}>
-        <AppInput autoFocus label={`${t('username')}:`} value={value} onChange={onChange} />
-        <AppInput label={`${t('password')}:`} />
+        <AppInput autoFocus label={`${t('username')}:`} value={username} onChange={onUsernameChange} />
+        <AppInput label={`${t('password')}:`} value={password} onChange={onPasswordChange} />
       </div>
-      <AppButton>{t('signIn')}</AppButton>
+      {error && (
+        <div className={style['auth-form__error']}>
+          {error}
+        </div>
+      )}
+      <AppButton disabled={isLoading} withHover onClick={onSignInClick}>{t('signIn')}</AppButton>
     </div>
   );
-};
+});
