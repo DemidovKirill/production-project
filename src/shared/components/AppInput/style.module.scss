@@ -21,7 +21,7 @@
   &__label {
     margin-left: 5px;
 
-    &_focused {
+    &.focused {
       color: var(--accent-color);
     }
   }

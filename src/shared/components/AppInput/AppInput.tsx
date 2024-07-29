@@ -38,7 +38,7 @@ export const AppInput: FunctionComponent<AppInputProps> = (props) => {
           className={
             classNames(
               style['app-input__label'],
-              { [style['app-input__label_focused']]: isFocused },
+              { [style.focused]: isFocused },
               [className],
             )
           }

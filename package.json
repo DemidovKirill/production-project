@@ -17,6 +17,7 @@
     "storybook": "storybook dev -p 6006 -c config/storybook",
     "storybook:build": "storybook build -c config/storybook",
     "test:loki": "loki test",
+    "test:loki:update": "loki update",
     "test:loki:approve": "loki approve",
     "test:loki:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:loki:json": "node scripts/generate-visual-json-report.js",
