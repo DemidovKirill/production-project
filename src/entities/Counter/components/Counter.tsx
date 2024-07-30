@@ -1,13 +1,12 @@
 import React from 'react';
 import { AppButton } from 'shared/components/AppButton/AppButton';
-import { useAppDispatch } from 'app/providers/Store';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { counterActions } from '../models/slice/counter.slice';
 import { getCounterValue } from '../models/selectors/getCounterValue/getCounterValue';
 
 export const Counter = () => {
   const counterValue = useSelector(getCounterValue);
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const increment = () => {
     dispatch(counterActions.increment(1));

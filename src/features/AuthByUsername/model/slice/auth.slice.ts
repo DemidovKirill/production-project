@@ -3,7 +3,7 @@ import { authByUsernameAsyncThunk } from 'features/AuthByUsername/model/services
 import { User } from 'entities/User';
 import { AuthSchema } from '../types/auth-schema';
 
-const initialState: AuthSchema = {
+export const authSchemaInitialState: AuthSchema = {
   username: '',
   password: '',
   isLoading: false,
@@ -13,7 +13,7 @@ const initialState: AuthSchema = {
 
 export const authSlice = createSlice({
   name: 'auth',
-  initialState,
+  initialState: authSchemaInitialState,
   reducers: {
     setUsername: (state: AuthSchema, action: PayloadAction<string>) => {
       state.username = action.payload;
