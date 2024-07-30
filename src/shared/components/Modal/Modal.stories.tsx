@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/theme-decorator';
 import { Theme } from 'shared/contexts/theme-context';
+import { StoreDecorator } from 'shared/config/storybook/decorators/store-decorator';
 import { Modal } from './Modal';
 
 const meta = {
@@ -14,6 +15,7 @@ const meta = {
     container: document.body,
     isOpen: true,
   },
+  decorators: StoreDecorator({ user: { userData: { id: '1', username: 'admin' } } }),
 } satisfies Meta<typeof Modal>;
 
 export default meta;
