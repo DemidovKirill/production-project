@@ -34,21 +34,17 @@ export const Navbar: FunctionComponent<NavbarProps> = ({ className }) => {
     localStorage.removeItem(LOCAL_STORAGE_USER_DATA_KEY);
   }, [dispatch]);
 
-  if (userAuthData) {
-    return (
-      <div className={classNames(style.navbar, {}, [className])}>
+  return (
+    <div className={classNames(style.navbar, {}, [className])}>
+      {userAuthData ? (
         <AppButton appearance={[ButtonAppearance.CLEAR]} onClick={onUserLogout}>
           {t('signOut')}
         </AppButton>
-      </div>
-    );
-  }
-
-  return (
-    <div className={classNames(style.navbar, {}, [className])}>
-      <AppButton appearance={[ButtonAppearance.CLEAR]} onClick={onOpenModal}>
-        {t('signIn')}
-      </AppButton>
+      ) : (
+        <AppButton appearance={[ButtonAppearance.CLEAR]} onClick={onOpenModal}>
+          {t('signIn')}
+        </AppButton>
+      )}
       <AuthModal isOpen={isOpen} onClose={onCloseModal} />
     </div>
   );

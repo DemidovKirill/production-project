@@ -3,6 +3,8 @@ import React, {
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'shared/contexts/theme-context';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import style from './style.module.scss';
 
 interface OverlayProps {
@@ -17,6 +19,7 @@ export const Overlay: FunctionComponent<OverlayProps> = ({
 }) => {
   const [opened, setOpened] = useState(isOpen);
   const { theme } = useTheme();
+  const userAuthData = useSelector(getUserAuthData);
 
   const handleClose = () => {
     setOpened(false);
@@ -43,9 +46,9 @@ export const Overlay: FunctionComponent<OverlayProps> = ({
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [isOpen, onKeyDown]);
 
-  const mods = useMemo(() => ({
-    [style.close]: !opened,
-  }), [opened]);
+  const mods: Record<string, boolean | string> = useMemo(() => ({
+    [style.close]: !opened || !!userAuthData,
+  }), [opened, userAuthData]);
 
   return (
     <div

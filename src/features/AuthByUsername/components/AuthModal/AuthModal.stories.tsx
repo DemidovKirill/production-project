@@ -19,10 +19,17 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
+export const LightEmpty: Story = {
   args: {},
 };
-Light.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
+LightEmpty.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
+  auth: { username: '', password: '' },
+})];
+
+export const LightWithValue: Story = {
+  args: {},
+};
+LightWithValue.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
   auth: { username: 'admin', password: '123' },
 })];
 
@@ -40,10 +47,17 @@ LightPending.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
   auth: { username: 'admin', password: '123', isLoading: true },
 })];
 
-export const Dark: Story = {
+export const DarkEmpty: Story = {
   args: {},
 };
-Dark.decorators = [StoreDecorator({
+DarkEmpty.decorators = [StoreDecorator({
+  auth: { username: '', password: '' },
+})];
+
+export const DarkWithValue: Story = {
+  args: {},
+};
+DarkWithValue.decorators = [StoreDecorator({
   auth: { username: 'admin', password: '123' },
 })];
 
