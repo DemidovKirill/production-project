@@ -8,7 +8,7 @@ import { authByUsernameAsyncThunk } from '../../model/services/authByUsername/au
 import { getAuthState } from '../../model/selectors/getAuthState/getAuthState';
 import style from './style.module.scss';
 
-export const AuthForm = memo(() => {
+const AuthForm = memo(() => {
   const { t } = useTranslation();
   const {
     username, password, isLoading, error,
@@ -42,3 +42,5 @@ export const AuthForm = memo(() => {
     </div>
   );
 });
+
+export default AuthForm;
