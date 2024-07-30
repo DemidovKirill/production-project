@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 import { DeepPartial, StoreProvider, StoreSchema } from 'app/providers/Store';
-import i18n from '../../../config/i18n-jest';
+import i18n from '../../config/i18n-jest';
 
 export interface componentRenderOptions {
   route?: string;
