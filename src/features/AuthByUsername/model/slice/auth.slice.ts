@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { authByUsernameAsyncThunk } from 'features/AuthByUsername/model/services/authByUsername/authByUsername';
-import { User } from 'entities/User';
+import {
+  authByUsernameAsyncThunk,
+} from 'features/AuthByUsername/model/services/authByUsernameAsyncThunk/authByUsernameAsyncThunk';
 import { AuthSchema } from '../types/auth-schema';
 
 export const authSchemaInitialState: AuthSchema = {
