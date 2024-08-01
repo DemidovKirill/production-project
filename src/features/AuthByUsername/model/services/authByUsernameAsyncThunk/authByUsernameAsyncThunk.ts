@@ -13,8 +13,7 @@ export const authByUsernameAsyncThunk = createAsyncThunk<User, AuthByUsernamePro
   async (authData, thunkAPI) => {
     try {
       const response = await axios.post('http://localhost:8000/login', authData);
-
-      if (!response.data) {
+      if (!response?.data) {
         throw new Error();
       }
 

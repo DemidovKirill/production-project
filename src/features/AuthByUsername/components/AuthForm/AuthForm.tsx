@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { authActions, authReducer } from 'features/AuthByUsername';
 import { memo } from 'react';
 import { ReducerList, useLazyReducerImports } from 'shared/hooks/useLazyReducerImport';
+import {
+  authByUsernameAsyncThunk,
+} from 'features/AuthByUsername/model/services/authByUsernameAsyncThunk/authByUsernameAsyncThunk';
 import { getAuthUsername } from '../../model/selectors/getAuthUsername/getAuthUsername';
 import { getAuthPassword } from '../../model/selectors/getAuthPassword/getAuthPassword';
 import { getAuthIsLoading } from '../../model/selectors/getAuthIsLoading/getAuthIsLoading';
 import { getAuthError } from '../../model/selectors/getAuthError/getAuthError';
 import style from './style.module.scss';
-import { authByUsernameAsyncThunk } from '../../model/services/authByUsername/authByUsername';
 
 const reducerList: ReducerList = {
   auth: authReducer,
