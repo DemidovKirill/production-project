@@ -3,12 +3,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/components/ThemeSwitcher';
 import { LanguageSwitcher } from 'shared/components/LanguageSwitcher';
 import ToggleArrow from 'shared/assets/icon/arrow.svg';
-import HomeLink from 'shared/assets/icon/links/home.svg';
-import AboutLink from 'shared/assets/icon/links/about.svg';
 import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
-import { AppLink, AppLinkTheme } from 'shared/components/AppLink/AppLink';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routerPathConfig';
+import { SidebarLink } from 'widgets/Sidebar/components/SidebarLink/SidebarLink';
+import { SidebarLinkItems } from 'widgets/Sidebar/models/sidebar-link-items';
 import style from './style.module.scss';
 
 interface SidebarProps {
@@ -17,7 +14,6 @@ interface SidebarProps {
 
 export const Sidebar: FunctionComponent<SidebarProps> = ({ className }) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const { t } = useTranslation();
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
@@ -30,24 +26,9 @@ export const Sidebar: FunctionComponent<SidebarProps> = ({ className }) => {
     >
       <div className={style.sidebar__content}>
         <div className={style.sidebar__links}>
-          <AppLink
-            className={style.sidebar__link}
-            theme={AppLinkTheme.PRIMARY}
-            to={RoutePath.main}
-            isSidebarCollapsed={collapsed}
-          >
-            <HomeLink />
-            <span className={style['sidebar__link-title']}>{t('mainPageLink')}</span>
-          </AppLink>
-          <AppLink
-            className={style.sidebar__link}
-            theme={AppLinkTheme.PRIMARY}
-            to={RoutePath.about}
-            isSidebarCollapsed={collapsed}
-          >
-            <AboutLink />
-            <span className={style['sidebar__link-title']}>{t('aboutPageLink')}</span>
-          </AppLink>
+          {SidebarLinkItems.map((link) => (
+            <SidebarLink link={link} collapsed={collapsed} key={link.to} />
+          ))}
         </div>
         <div className={style.sidebar__switchers}>
           <ThemeSwitcher />
