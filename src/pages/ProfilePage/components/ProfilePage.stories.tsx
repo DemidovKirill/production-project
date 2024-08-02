@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/theme-decorator';
 import { Theme } from 'shared/contexts/theme-context';
+import { StoreDecorator } from 'shared/config/storybook/decorators/store-decorator';
+import { profileInitialState } from 'entities/Profile';
 import ProfilePage from './ProfilePage';
 
 const meta = {
@@ -17,8 +19,9 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
   args: {},
 };
-Light.decorators = [ThemeDecorator(Theme.LIGHT)];
+Light.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({ profile: profileInitialState })];
 
 export const Dark: Story = {
   args: {},
 };
+Dark.decorators = [StoreDecorator({ profile: profileInitialState })];
