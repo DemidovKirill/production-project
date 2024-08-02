@@ -1,30 +1,36 @@
 import { AppButton } from 'shared/components/AppButton/AppButton';
 import { useTranslation } from 'react-i18next';
 import { AppInput } from 'shared/components/AppInput/AppInput';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { authActions, authReducer } from 'features/AuthByUsername';
 import { memo } from 'react';
-import { ReducerList, useLazyReducerImports } from 'shared/hooks/useLazyReducerImport';
+import { ReducerList, useLazyReducerImports } from 'shared/lib/hooks/useLazyReducerImport';
 import {
   authByUsernameAsyncThunk,
 } from 'features/AuthByUsername/model/services/authByUsernameAsyncThunk/authByUsernameAsyncThunk';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { getAuthUsername } from '../../model/selectors/getAuthUsername/getAuthUsername';
 import { getAuthPassword } from '../../model/selectors/getAuthPassword/getAuthPassword';
 import { getAuthIsLoading } from '../../model/selectors/getAuthIsLoading/getAuthIsLoading';
 import { getAuthError } from '../../model/selectors/getAuthError/getAuthError';
 import style from './style.module.scss';
 
+interface AuthFormProps {
+  onSuccess: () => void;
+}
+
 const reducerList: ReducerList = {
   auth: authReducer,
 };
 
-const AuthForm = memo(() => {
+const AuthForm = memo((props: AuthFormProps) => {
+  const { onSuccess } = props;
   const { t } = useTranslation();
   const username = useSelector(getAuthUsername);
   const password = useSelector(getAuthPassword);
   const isLoading = useSelector(getAuthIsLoading);
   const error = useSelector(getAuthError);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useLazyReducerImports(reducerList);
 
@@ -36,8 +42,12 @@ const AuthForm = memo(() => {
     dispatch(authActions.setPassword(value));
   };
 
-  const onSignInClick = () => {
-    dispatch(authByUsernameAsyncThunk({ username, password }));
+  const onSignInClick = async () => {
+    const result = await dispatch(authByUsernameAsyncThunk({ username, password }));
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
   };
 
   return (

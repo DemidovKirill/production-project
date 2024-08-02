@@ -1,5 +1,5 @@
 export { StoreProvider } from './components/StoreProvider';
-export { createReduxStore } from './config/store';
+export { createReduxStore, AppDispatch } from './config/store';
 export type { StoreSchema } from './config/store-schema';
 
 type DeepPartial<T extends Record<string | symbol | number, any>> = {

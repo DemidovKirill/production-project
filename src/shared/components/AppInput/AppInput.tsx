@@ -1,4 +1,4 @@
-import React, { FunctionComponent, InputHTMLAttributes, useState } from 'react';
+import React, { InputHTMLAttributes, memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import style from './style.module.scss';
 
@@ -13,7 +13,7 @@ interface AppInputProps extends HTMLInputProps{
   onChange?: (value: string) => void;
 }
 
-export const AppInput: FunctionComponent<AppInputProps> = (props) => {
+export const AppInput = memo((props: AppInputProps) => {
   const {
     value, onChange, className, type = 'text', label, autoFocus, ...other
   } = props;
@@ -58,4 +58,4 @@ export const AppInput: FunctionComponent<AppInputProps> = (props) => {
       />
     </div>
   );
-};
+});

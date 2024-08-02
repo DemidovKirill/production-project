@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
@@ -7,7 +7,7 @@ interface LanguageSwitcherProps {
   className?: string
 }
 
-export const LanguageSwitcher: FunctionComponent<LanguageSwitcherProps> = ({ className }) => {
+export const LanguageSwitcher = memo(({ className }: LanguageSwitcherProps) => {
   const { i18n } = useTranslation();
 
   const changeLanguage = () => {
@@ -23,4 +23,4 @@ export const LanguageSwitcher: FunctionComponent<LanguageSwitcherProps> = ({ cla
       {i18n.language.toUpperCase()}
     </AppButton>
   );
-};
+});

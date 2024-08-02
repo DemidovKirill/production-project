@@ -13,7 +13,7 @@ interface AuthModalProps {
 export const AuthModal: FC<AuthModalProps> = ({ isOpen, onClose, container }) => (
   <Modal className={style['auth-modal']} isOpen={isOpen} onClose={onClose} container={container}>
     <Suspense fallback={<PageLoader />}>
-      <AuthFormLazy />
+      <AuthFormLazy onSuccess={onClose} />
     </Suspense>
   </Modal>
 );
