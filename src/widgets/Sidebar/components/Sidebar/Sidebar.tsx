@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/components/ThemeSwitcher';
 import { LanguageSwitcher } from 'shared/components/LanguageSwitcher';
@@ -12,7 +12,7 @@ interface SidebarProps {
   className?: string
 }
 
-export const Sidebar: FunctionComponent<SidebarProps> = ({ className }) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
   const onToggle = () => {
@@ -46,4 +46,4 @@ export const Sidebar: FunctionComponent<SidebarProps> = ({ className }) => {
       </div>
     </div>
   );
-};
+});

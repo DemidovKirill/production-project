@@ -1,4 +1,6 @@
-import { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import {
+  ButtonHTMLAttributes, memo, ReactNode,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import style from './style.module.scss';
 
@@ -15,9 +17,10 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   appearance?: ButtonAppearance[];
   disabled?: boolean;
   withHover?: boolean;
+  children?: ReactNode;
 }
 
-export const AppButton: FunctionComponent<AppButtonProps> = (props) => {
+export const AppButton = memo((props: AppButtonProps) => {
   const {
     appearance = [ButtonAppearance.PRIMARY],
     className,
@@ -44,4 +47,4 @@ export const AppButton: FunctionComponent<AppButtonProps> = (props) => {
       {children}
     </button>
   );
-};
+});

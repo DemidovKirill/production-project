@@ -4,7 +4,7 @@ import { AppInput } from 'shared/components/AppInput/AppInput';
 import { useSelector } from 'react-redux';
 import { authActions, authReducer } from 'features/AuthByUsername';
 import { memo } from 'react';
-import { ReducerList, useLazyReducerImports } from 'shared/hooks/useLazyReducerImport';
+import { ReducerList, useLazyReducerImports } from 'shared/lib/hooks/useLazyReducerImport';
 import {
   authByUsernameAsyncThunk,
 } from 'features/AuthByUsername/model/services/authByUsernameAsyncThunk/authByUsernameAsyncThunk';
