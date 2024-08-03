@@ -16,6 +16,7 @@ export const buildPlugins = (options: BuildOptions): webpack.WebpackPluginInstan
   }),
   new webpack.DefinePlugin({
     __IS_DEV__: JSON.stringify(options.isDev),
+    __API__: JSON.stringify(options.apiUrl),
   }),
   options.analyze && new BundleAnalyzerPlugin(),
   options.isDev && new ReactRefreshWebpackPlugin({ overlay: false }),

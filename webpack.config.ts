@@ -13,11 +13,13 @@ export default (env: BuildEnv) => {
 
   const mode = env.mode || 'development';
   const isDev = mode === 'development';
+  const apiUrl = env.apiUrl || 'http://localhost:8000';
 
   const config: webpack.Configuration = BuildWebpackConfig({
     mode,
     paths,
     isDev,
+    apiUrl,
     analyze: env.analyze,
     port: env.port || 3000,
   });
