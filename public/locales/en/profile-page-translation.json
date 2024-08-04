@@ -1,11 +1,3 @@
 {
-  "profilePage": "Profile Page",
-  "name": "Name",
-  "nickname":"Nickname",
-  "lastname": "Lastname",
-  "avatarLink":"Avatar Link",
-  "age": "Age",
-  "currency":"Currency",
-  "city": "City",
-  "country":"Country"
+  "profilePage": "Profile Page"
 }
