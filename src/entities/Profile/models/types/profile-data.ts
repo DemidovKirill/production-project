@@ -2,8 +2,8 @@ import { Country } from 'shared/constants/country';
 import { Currency } from 'shared/constants/currency';
 
 export interface ProfileData {
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
   age: number;
   currency: Currency;
   country: Country;
@@ -11,3 +11,5 @@ export interface ProfileData {
   username: string;
   avatar: string;
 }
+
+export type ProfileDataKeys = keyof ProfileData;

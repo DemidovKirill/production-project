@@ -1,0 +1,10 @@
+{
+  "name": "Name",
+  "nickname":"Nickname",
+  "lastname": "Lastname",
+  "avatar":"Avatar Link",
+  "age": "Age",
+  "currency":"Currency",
+  "city": "City",
+  "country":"Country"
+}
