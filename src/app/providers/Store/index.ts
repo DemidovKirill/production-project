@@ -1,6 +1,6 @@
 export { StoreProvider } from './components/StoreProvider';
 export { createReduxStore, AppDispatch } from './config/store';
-export type { StoreSchema } from './config/store-schema';
+export type { StoreSchema, ThunkExtraArguments, ThunkConfig } from './config/store-schema';
 
 type DeepPartial<T extends Record<string | symbol | number, any>> = {
   [K in keyof T]?: T[K] extends Record<string, any>
