@@ -19,6 +19,7 @@ export const profileSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    // @ts-ignore
     builder
       .addCase(fetchProfileData.pending, (state: ProfileSchema) => {
         state.isLoading = true;

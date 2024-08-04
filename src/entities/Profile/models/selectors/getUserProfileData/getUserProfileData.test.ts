@@ -1,6 +1,4 @@
-import { DeepPartial } from 'app/providers/Store/index';
 import { StoreSchema } from 'app/providers/Store';
-import { profileInitialState } from 'entities/Profile';
 import { getUserProfileData } from './getUserProfileData';
 
 describe('Get Profile Data', () => {

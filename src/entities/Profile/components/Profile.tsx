@@ -67,12 +67,12 @@ export const Profile: FunctionComponent = () => {
         </AppButton>
       </header>
       <main className={style.profile__main}>
-        {profileData && Object.keys(profileData).map((key: ProfileDataKeys) => (
+        {profileData && Object.keys(profileData).map((key) => (
           <AppInput
             disabled={profileReadonly}
             label={t(key.toLowerCase())}
-            value={profileData[key].toString() || '-'}
-            key={profileData[key].toString()}
+            value={profileData[key as ProfileDataKeys].toString() || '-'}
+            key={profileData[key as ProfileDataKeys].toString()}
           />
         ))}
       </main>

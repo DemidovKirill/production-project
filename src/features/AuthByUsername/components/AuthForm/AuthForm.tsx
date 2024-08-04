@@ -16,7 +16,7 @@ import { getAuthError } from '../../model/selectors/getAuthError/getAuthError';
 import style from './style.module.scss';
 
 interface AuthFormProps {
-  onSuccess: () => void;
+  onSuccess?: () => void;
 }
 
 const reducerList: ReducerList = {
@@ -46,7 +46,7 @@ const AuthForm = memo((props: AuthFormProps) => {
     const result = await dispatch(authByUsernameAsyncThunk({ username, password }));
 
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess();
+      onSuccess?.();
     }
   };
 

@@ -1,10 +1,9 @@
-import { DeepPartial } from 'app/providers/Store/index';
 import { StoreSchema } from 'app/providers/Store';
 import { authSchemaInitialState } from 'features/AuthByUsername/model/slice/auth.slice';
 import { getAuthState } from './getAuthState';
 
 describe('Get Auth State', () => {
-  test('Get Auth State should return the correct counter state', () => {
+  test('Get Auth State should return the correct auth state state', () => {
     const state: DeepPartial<StoreSchema> = {
       auth: { username: 'name', password: '123' },
     };

@@ -1,4 +1,3 @@
-import { DeepPartial } from 'app/providers/Store';
 import { profileActions, profileReducer, ProfileSchema } from 'entities/Profile';
 
 describe('Profile Slice', () => {

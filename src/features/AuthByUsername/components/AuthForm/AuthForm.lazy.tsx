@@ -1,7 +1,7 @@
 import { FC, lazy } from 'react';
 
 interface AuthFormProps {
-  onSuccess: () => void;
+  onSuccess?: () => void;
 }
 
 export const AuthFormLazy = lazy <FC<AuthFormProps>>(() => new Promise((resolve) => {
