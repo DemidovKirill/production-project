@@ -8,7 +8,7 @@ import style from './style.module.scss';
 interface OverlayProps {
   className?: string;
   children: ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
   isOpen: boolean;
 }
 

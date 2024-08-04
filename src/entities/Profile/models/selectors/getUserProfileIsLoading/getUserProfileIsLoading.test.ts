@@ -1,4 +1,3 @@
-import { DeepPartial } from 'app/providers/Store/index';
 import { StoreSchema } from 'app/providers/Store';
 import { getUserProfileIsLoading } from './getUserProfileIsLoading';
 

@@ -1,5 +1,4 @@
 import { authActions, authReducer, AuthSchema } from 'features/AuthByUsername';
-import { DeepPartial } from 'app/providers/Store';
 
 describe('Auth Slice', () => {
   test('Set Username', () => {

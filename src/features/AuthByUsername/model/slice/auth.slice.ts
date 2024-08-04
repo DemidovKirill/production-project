@@ -24,6 +24,7 @@ export const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    // @ts-ignore
     builder
       .addCase(authByUsernameAsyncThunk.pending, (state: AuthSchema) => {
         state.isLoading = true;

@@ -44,6 +44,8 @@ module.exports = {
     indent: [2, 2],
     'linebreak-style': 0,
     'jsx-a11y/no-autofocus': 'off',
+    'no-undef': 'off',
+    'no-param-reassign': 'off',
 
     // HOOK's
     'react-hooks/rules-of-hooks': 'error',
