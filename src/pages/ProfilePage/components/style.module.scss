@@ -7,4 +7,51 @@
   height: 100%;
 
   background-color: var(--app-background);
+
+  &__content {
+    width: 100%;
+    max-width: 780px;
+    padding: 20px;
+
+    background-color: var(--secondary-background);
+    border-radius: 20px;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  &__avatar {
+    max-width: 128px;
+    border-radius: 50%;
+  }
+
+  &__edit-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.1s linear;
+
+    &:hover {
+      transition: all 0.1s linear;
+      transform: scale(1.1);
+    }
+  }
+
+  &__edit-icon {
+    path {
+      stroke: var(--icon-color);
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 }

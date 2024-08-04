@@ -1,3 +1,11 @@
 {
+  "age": "age",
+  "avatarLink": "avatarLink",
+  "city": "city",
+  "country": "country",
+  "currency": "currency",
+  "lastname": "lastname",
+  "name": "name",
+  "nickname": "nickname",
   "profilePage": "profilePage"
 }
