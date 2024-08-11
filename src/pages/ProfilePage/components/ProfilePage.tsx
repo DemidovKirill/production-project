@@ -7,6 +7,7 @@ import SaveIcon from 'shared/assets/icon/save.svg';
 import CloseIcon from 'shared/assets/icon/close.svg';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { ProfileDataKeys, updateProfileData } from 'pages/ProfilePage';
+import { Avatar } from 'shared/components/Avatar/Avatar';
 import { getUserProfileFormData } from '../models/selectors/getUserProfileFormData/getUserProfileFormData';
 import { profileActions, profileReducer } from '../models/slice/profile.slice';
 import { getUserProfileIsLoading } from '../models/selectors/getUserProfileIsLoading/getUserProfileIsLoading';
@@ -103,15 +104,7 @@ const ProfilePage = () => {
     <div className={style['profile-page']}>
       <div className={style['profile-page__content']}>
         <header className={style['profile-page__header']}>
-          {profileFormData?.avatar ? (
-            <img
-              className={style['profile-page__avatar']}
-              src={profileFormData?.avatar}
-              alt="Avatar"
-            />
-          ) : (
-            <div className={style['profile-page__avatar']} />
-          )}
+          <Avatar src={profileFormData?.avatar} alt={profileFormData?.avatar && 'Avatar'} size={128} />
           {getEditIcons()}
         </header>
         <ProfileCard

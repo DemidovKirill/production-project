@@ -28,13 +28,6 @@
     border-bottom: 2px solid var(--app-background);
   }
 
-  &__avatar {
-    width: 128px;
-    height: 128px;
-    background-color: var(--secondary-color);
-    border-radius: 50%;
-  }
-
   &__edit-icon {
     path {
       stroke: var(--icon-color);
