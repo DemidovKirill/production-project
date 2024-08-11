@@ -1,4 +1,4 @@
-import { ProfileData } from 'entities/Profile/models/types/profile-data';
+import { ProfileData } from './profile-data';
 
 export interface ProfileSchema {
   profileData?: ProfileData | null;

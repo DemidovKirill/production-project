@@ -14,7 +14,7 @@ export const profileSlice = createSlice({
   name: 'profile',
   initialState: profileInitialState,
   reducers: {
-    toggleReadonly: (state: ProfileSchema, action: PayloadAction<boolean>) => {
+    setReadonly: (state: ProfileSchema, action: PayloadAction<boolean>) => {
       state.readonly = action.payload;
     },
   },

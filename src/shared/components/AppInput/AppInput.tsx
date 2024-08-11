@@ -9,15 +9,22 @@ interface AppInputProps extends HTMLInputProps{
   type?: string;
   label?: string;
   autoFocus?: boolean;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
 }
 
 export const AppInput = memo((props: AppInputProps) => {
   const {
-    value, onChange, className, type = 'text', label, autoFocus, ...other
+    value,
+    onChange,
+    className,
+    type = 'text',
+    label,
+    autoFocus,
+    ...other
   } = props;
-  const [isFocused, setIsFocused] = useState(autoFocus || false);
+
+  const [isFocused, setIsFocused] = useState(autoFocus);
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value);

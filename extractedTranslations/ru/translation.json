@@ -3,6 +3,7 @@
   "auth": "auth",
   "mainPageLink": "mainPageLink",
   "notFound": "notFound",
+  "ops": "ops",
   "pageError": "pageError",
   "password": "password",
   "reloadPage": "reloadPage",

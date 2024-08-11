@@ -4,15 +4,15 @@ import { Theme } from 'shared/contexts/theme-context';
 import { StoreDecorator } from 'shared/config/storybook/decorators/store-decorator';
 import { Currency } from 'shared/constants/currency';
 import { Country } from 'shared/constants/country';
-import { Profile } from './Profile';
+import { ProfileCard } from './ProfileCard';
 
 const meta = {
-  title: 'entities/Profile',
-  component: Profile,
+  title: 'entities/ProfileCard',
+  component: ProfileCard,
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof Profile>;
+} satisfies Meta<typeof ProfileCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

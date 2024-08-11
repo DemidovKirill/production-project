@@ -1,9 +1,62 @@
 .profile-page {
   display: flex;
+  flex-direction: column;
   gap: 25px;
   justify-content: center;
   width: 100%;
 
   background-color: var(--app-background);
+
+  &__content {
+    width: 100%;
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    background-color: var(--secondary-background);
+    border-radius: 20px;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+
+    border-bottom: 2px solid var(--app-background);
+  }
+
+  &__avatar {
+    width: 128px;
+    height: 128px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+  }
+
+  &__edit-icon {
+    path {
+      stroke: var(--icon-color);
+    }
+
+    &_editable {
+      animation: pulse 1300ms infinite;
+
+      path {
+        stroke: var(--success-color);
+      }
+    }
+  }
+
+  &__edit-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    &:hover path {
+      stroke: var(--success-color);
+    }
+  }
 }
 

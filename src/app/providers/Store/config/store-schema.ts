@@ -1,7 +1,7 @@
 import { UserSchema } from 'entities/User';
 import { AuthSchema } from 'features/AuthByUsername';
 import { EnhancedStore } from '@reduxjs/toolkit';
-import { ProfileSchema } from 'entities/Profile';
+import { ProfileSchema } from 'pages/ProfilePage';
 import { AxiosInstance } from 'axios';
 import { createReducerManager } from './reducer-manager';
 
