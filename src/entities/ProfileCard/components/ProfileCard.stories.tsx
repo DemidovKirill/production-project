@@ -18,64 +18,49 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const LightIsLoading: Story = {
-  args: {},
-};
-LightIsLoading.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-  profile: {
-    profileData: null, isLoading: true, readonly: true, error: null,
+  args: {
+    isLoading: true,
   },
-})];
+};
+LightIsLoading.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})];
 
 export const DarkIsLoading: Story = {
-  args: {},
-};
-DarkIsLoading.decorators = [StoreDecorator({
-  profile: {
-    profileData: null, isLoading: true, readonly: true, error: null,
+  args: {
+    isLoading: true,
   },
-})];
+};
+DarkIsLoading.decorators = [StoreDecorator({})];
 
 export const LightError: Story = {
-  args: {},
-};
-LightError.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-  profile: {
-    profileData: null, isLoading: false, readonly: true, error: 'Error',
+  args: {
+    error: 'Error',
   },
-})];
+};
+LightError.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})];
 
 export const DarkError: Story = {
-  args: {},
-};
-DarkError.decorators = [StoreDecorator({
-  profile: {
-    profileData: null, isLoading: false, readonly: true, error: 'Error',
+  args: {
+    error: 'Error',
   },
-})];
+};
+DarkError.decorators = [StoreDecorator({})];
 
 export const LightReadonlyFalse: Story = {
-  args: {},
-};
-LightReadonlyFalse.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-  profile: {
-    profileData: null, isLoading: false, readonly: false, error: null,
+  args: {
+    readonly: false,
   },
-})];
+};
+LightReadonlyFalse.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})];
 
 export const DarkReadonlyFalse: Story = {
-  args: {},
-};
-DarkReadonlyFalse.decorators = [StoreDecorator({
-  profile: {
-    profileData: null, isLoading: false, readonly: false, error: null,
+  args: {
+    readonly: false,
   },
-})];
+};
+DarkReadonlyFalse.decorators = [StoreDecorator({})];
 
 export const LightFullData: Story = {
-  args: {},
-};
-LightFullData.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-  profile: {
+  args: {
     profileData: {
       firstname: 'Тимур',
       lastname: 'Ульби',
@@ -86,17 +71,13 @@ LightFullData.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
       username: 'admin',
       avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
     },
-    isLoading: false,
     readonly: true,
-    error: null,
   },
-})];
+};
+LightFullData.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})];
 
 export const DarkFullData: Story = {
-  args: {},
-};
-DarkFullData.decorators = [StoreDecorator({
-  profile: {
+  args: {
     profileData: {
       firstname: 'Тимур',
       lastname: 'Ульби',
@@ -107,8 +88,7 @@ DarkFullData.decorators = [StoreDecorator({
       username: 'admin',
       avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
     },
-    isLoading: false,
     readonly: true,
-    error: null,
   },
-})];
+};
+DarkFullData.decorators = [StoreDecorator({})];

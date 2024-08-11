@@ -12,6 +12,7 @@ interface ProfileCardProps {
   error?: string | null;
   isLoading?: boolean;
   readonly?: boolean;
+  // Change Functions
   onChangeFirstname?: (value: string) => void;
   onChangeLastname?: (value: string) => void;
   onChangeAge?: (value: string) => void;
