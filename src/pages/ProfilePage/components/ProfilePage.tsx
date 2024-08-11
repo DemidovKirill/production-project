@@ -3,11 +3,13 @@ import { ProfileCard } from 'entities/ProfileCard';
 import { useSelector } from 'react-redux';
 import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
 import EditIcon from 'shared/assets/icon/edit.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
+import SaveIcon from 'shared/assets/icon/save.svg';
+import CloseIcon from 'shared/assets/icon/close.svg';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { ProfileDataKeys, updateProfileData } from 'pages/ProfilePage';
+import { getUserProfileFormData } from '../models/selectors/getUserProfileFormData/getUserProfileFormData';
 import { profileActions, profileReducer } from '../models/slice/profile.slice';
 import { getUserProfileIsLoading } from '../models/selectors/getUserProfileIsLoading/getUserProfileIsLoading';
-import { getUserProfileData } from '../models/selectors/getUserProfileData/getUserProfileData';
 import { getUserProfileError } from '../models/selectors/getUserProfileError/getUserProfileError';
 import { getUserProfileReadonly } from '../models/selectors/getUserProfileReadonly/getUserProfileReadonly';
 import style from './style.module.scss';
@@ -18,7 +20,7 @@ const reducerList: ReducerList = {
 
 const ProfilePage = () => {
   useLazyReducerImports(reducerList);
-  const profileData = useSelector(getUserProfileData);
+  const profileFormData = useSelector(getUserProfileFormData);
   const profileError = useSelector(getUserProfileError);
   const profileReadonly = useSelector(getUserProfileReadonly);
   const profileIsLoading = useSelector(getUserProfileIsLoading);
@@ -30,40 +32,101 @@ const ProfilePage = () => {
     }
   };
 
+  const onSaveButtonClick = () => {
+    if (!profileError) {
+      dispatch(updateProfileData());
+    }
+  };
+
+  const onCancelButtonClick = () => {
+    if (!profileError) {
+      dispatch(profileActions.cancelProfileEditing());
+    }
+  };
+
+  const onChangeFirstname = (value: string) => {
+    dispatch(profileActions.updateProfile({ firstname: value }));
+  };
+  const onChangeLastname = (value: string) => {
+    dispatch(profileActions.updateProfile({ lastname: value }));
+  };
+  const onChangeAge = (value: string) => {
+    const validatedValue = value.replace(/\D+/gm, '');
+    dispatch(profileActions.updateProfile({ age: Number(validatedValue) }));
+  };
+  const onChangeCity = (value: string) => {
+    dispatch(profileActions.updateProfile({ city: value }));
+  };
+  const onChangeUsername = (value: string) => {
+    dispatch(profileActions.updateProfile({ username: value }));
+  };
+  const onChangeAvatar = (value: string) => {
+    dispatch(profileActions.updateProfile({ avatar: value }));
+  };
+
+  const getEditIcons = () => {
+    if (!profileReadonly) {
+      return (
+        <div className={style['profile-page__edit-buttons']}>
+          <AppButton
+            className={style['profile-page__edit-button']}
+            appearance={[ButtonAppearance.CLEAR]}
+            onClick={onSaveButtonClick}
+          >
+            <SaveIcon className={style['profile-page__save-icon']} />
+          </AppButton>
+          <AppButton
+            className={style['profile-page__edit-button']}
+            appearance={[ButtonAppearance.CLEAR]}
+            onClick={onCancelButtonClick}
+          >
+            <CloseIcon className={style['profile-page__cancel-icon']} />
+          </AppButton>
+        </div>
+      );
+    }
+
+    return (
+      <div className={style['profile-page__edit-buttons']}>
+        <AppButton
+          className={style['profile-page__edit-button']}
+          appearance={[ButtonAppearance.CLEAR]}
+          onClick={onEditButtonClick}
+        >
+          <EditIcon className={style['profile-page__edit-icon']} />
+        </AppButton>
+      </div>
+    );
+  };
+
   return (
     <div className={style['profile-page']}>
       <div className={style['profile-page__content']}>
         <header className={style['profile-page__header']}>
-          {profileData?.avatar ? (
+          {profileFormData?.avatar ? (
             <img
               className={style['profile-page__avatar']}
-              src={profileData?.avatar}
+              src={profileFormData?.avatar}
               alt="Avatar"
             />
           ) : (
             <div className={style['profile-page__avatar']} />
           )}
-          <AppButton
-            className={style['profile-page__edit-button']}
-            appearance={[ButtonAppearance.CLEAR]}
-            onClick={onEditButtonClick}
-          >
-            <EditIcon
-              className={
-                classNames(
-                  style['profile-page__edit-icon'],
-                  { [style['profile-page__edit-icon_editable']]: !profileReadonly },
-                  [],
-                )
-              }
-            />
-          </AppButton>
+          {getEditIcons()}
         </header>
         <ProfileCard
-          profileData={profileData}
+          profileData={profileFormData}
           readonly={profileReadonly}
           isLoading={profileIsLoading}
           error={profileError}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeUsername={onChangeUsername}
+          onChangeAvatar={onChangeAvatar}
+          onChangeCurrency={(value: string) => console.log('Currency: ', value)}
+          onChangeCountry={(value: string) => console.log('Country: ', value)}
         />
       </div>
     </div>

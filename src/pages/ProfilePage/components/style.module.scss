@@ -41,21 +41,37 @@
     }
 
     &_editable {
-      animation: pulse 1300ms infinite;
-
       path {
         stroke: var(--success-color);
       }
     }
   }
 
-  &__edit-button {
+  &__save-icon {
+    path {
+      stroke: var(--success-color);
+    }
+  }
+
+  &__cancel-icon {
+    path {
+      stroke: var(--error-color);
+    }
+  }
+
+  &__edit-buttons {
     position: absolute;
     top: 20px;
     right: 20px;
 
-    &:hover path {
-      stroke: var(--success-color);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__edit-button {
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

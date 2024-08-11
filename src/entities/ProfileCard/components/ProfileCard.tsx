@@ -12,11 +12,30 @@ interface ProfileCardProps {
   error?: string | null;
   isLoading?: boolean;
   readonly?: boolean;
+  onChangeFirstname?: (value: string) => void;
+  onChangeLastname?: (value: string) => void;
+  onChangeAge?: (value: string) => void;
+  onChangeCity?: (value: string) => void;
+  onChangeUsername?: (value: string) => void;
+  onChangeAvatar?: (value: string) => void;
+  onChangeCurrency?: (value: string) => void;
+  onChangeCountry?: (value: string) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
   const {
-    profileData, error, isLoading, readonly,
+    profileData,
+    error,
+    isLoading,
+    readonly,
+    onChangeFirstname,
+    onChangeLastname,
+    onChangeAge,
+    onChangeCity,
+    onChangeUsername,
+    onChangeAvatar,
+    onChangeCurrency,
+    onChangeCountry,
   } = props;
   const { t } = useTranslation('profile-translation');
   const dispatch = useAppDispatch();
@@ -44,15 +63,55 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   return (
     <div className={style['profile-card']}>
-      {profileData && Object.keys(profileData).map((key, index) => (
-        <AppInput
-          disabled={readonly}
-          label={t(key.toLowerCase())}
-          value={profileData[key as ProfileDataKeys] || '-'}
-          key={profileData[key as ProfileDataKeys]?.toString()}
-          autoFocus={(index === 0 && !readonly)}
-        />
-      ))}
+      <AppInput
+        disabled={readonly}
+        label={t('firstname')}
+        value={profileData?.firstname || '-'}
+        autoFocus={!readonly}
+        onChange={onChangeFirstname}
+      />
+      <AppInput
+        disabled={readonly}
+        label={t('lastname')}
+        value={profileData?.lastname || '-'}
+        onChange={onChangeLastname}
+      />
+      <AppInput
+        disabled={readonly}
+        label={t('age')}
+        value={profileData?.age || '-'}
+        onChange={onChangeAge}
+      />
+      <AppInput
+        disabled={readonly}
+        label={t('city')}
+        value={profileData?.city || '-'}
+        onChange={onChangeCity}
+      />
+      <AppInput
+        disabled={readonly}
+        label={t('username')}
+        value={profileData?.username || '-'}
+        onChange={onChangeUsername}
+      />
+      <AppInput
+        disabled={readonly}
+        label={t('avatar')}
+        value={profileData?.avatar || '-'}
+        onChange={onChangeAvatar}
+      />
+      <AppInput
+        disabled={readonly}
+        label={t('currency')}
+        value={profileData?.currency || '-'}
+        onChange={onChangeCurrency}
+      />
+      <AppInput
+        disabled={readonly}
+        label={t('country')}
+        value={profileData?.country || '-'}
+        onChange={onChangeCountry}
+      />
     </div>
   );
 });
