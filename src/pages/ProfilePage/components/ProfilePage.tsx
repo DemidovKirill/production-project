@@ -6,8 +6,10 @@ import EditIcon from 'shared/assets/icon/edit.svg';
 import SaveIcon from 'shared/assets/icon/save.svg';
 import CloseIcon from 'shared/assets/icon/close.svg';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { ProfileDataKeys, updateProfileData } from 'pages/ProfilePage';
+import { updateProfileData } from 'pages/ProfilePage';
 import { Avatar } from 'shared/components/Avatar/Avatar';
+import { Currency } from 'entities/CurrencySelect';
+import { Country } from 'entities/CountrySelect';
 import { getUserProfileFormData } from '../models/selectors/getUserProfileFormData/getUserProfileFormData';
 import { profileActions, profileReducer } from '../models/slice/profile.slice';
 import { getUserProfileIsLoading } from '../models/selectors/getUserProfileIsLoading/getUserProfileIsLoading';
@@ -64,6 +66,12 @@ const ProfilePage = () => {
   const onChangeAvatar = (value: string) => {
     dispatch(profileActions.updateProfile({ avatar: value }));
   };
+  const onChangeCurrency = (currency: Currency) => {
+    dispatch(profileActions.updateProfile({ currency }));
+  };
+  const onChangeCountry = (country: Country) => {
+    dispatch(profileActions.updateProfile({ country }));
+  };
 
   const getEditIcons = () => {
     if (!profileReadonly) {
@@ -118,8 +126,8 @@ const ProfilePage = () => {
           onChangeCity={onChangeCity}
           onChangeUsername={onChangeUsername}
           onChangeAvatar={onChangeAvatar}
-          onChangeCurrency={(value: string) => console.log('Currency: ', value)}
-          onChangeCountry={(value: string) => console.log('Country: ', value)}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
         />
       </div>
     </div>

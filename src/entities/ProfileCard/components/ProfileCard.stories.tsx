@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/theme-decorator';
 import { Theme } from 'shared/contexts/theme-context';
 import { StoreDecorator } from 'shared/config/storybook/decorators/store-decorator';
-import { Currency } from 'shared/constants/currency';
-import { Country } from 'shared/constants/country';
+import { Currency } from 'entities/CurrencySelect/model/types/currency';
+import { Country } from 'entities/CountrySelect/models/types/country';
 import { ProfileCard } from './ProfileCard';
 
 const meta = {

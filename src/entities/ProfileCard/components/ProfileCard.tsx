@@ -2,9 +2,11 @@ import { AppInput } from 'shared/components/AppInput/AppInput';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { fetchProfileData, ProfileData, ProfileDataKeys } from 'pages/ProfilePage';
+import { fetchProfileData, ProfileData } from 'pages/ProfilePage';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { PageLoader } from 'widgets/PageLoader';
+import { Currency, CurrencySelect } from 'entities/CurrencySelect';
+import { Country, CountrySelect } from 'entities/CountrySelect';
 import style from './style.module.scss';
 
 interface ProfileCardProps {
@@ -19,8 +21,8 @@ interface ProfileCardProps {
   onChangeCity?: (value: string) => void;
   onChangeUsername?: (value: string) => void;
   onChangeAvatar?: (value: string) => void;
-  onChangeCurrency?: (value: string) => void;
-  onChangeCountry?: (value: string) => void;
+  onChangeCurrency?: (currency: Currency) => void;
+  onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -101,17 +103,15 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         value={profileData?.avatar || '-'}
         onChange={onChangeAvatar}
       />
-      <AppInput
-        disabled={readonly}
-        label={t('currency')}
-        value={profileData?.currency || '-'}
+      <CurrencySelect
+        value={profileData?.currency}
         onChange={onChangeCurrency}
+        readonly={readonly}
       />
-      <AppInput
-        disabled={readonly}
-        label={t('country')}
-        value={profileData?.country || '-'}
+      <CountrySelect
+        value={profileData?.country}
         onChange={onChangeCountry}
+        readonly={readonly}
       />
     </div>
   );
