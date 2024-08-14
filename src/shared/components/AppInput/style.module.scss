@@ -18,11 +18,24 @@
     transition: all 0.1s linear;
   }
 
+  &.error {
+    border: 1px solid var(--error-color);
+  }
+
   &__label {
     margin-left: 5px;
 
     &.focused {
       color: var(--accent-color);
     }
+
+    &-wrapper {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__error {
+    color: var(--error-color);
   }
 }

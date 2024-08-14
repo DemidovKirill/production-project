@@ -1,6 +1,7 @@
 export { ProfilePageLazy as ProfilePage } from './components/ProfilePage.lazy';
 
 export { ProfileSchema } from './models/types/profile-schema';
+export { ValidateProfileDataError } from './models/types/profile-data-errors';
 export { ProfileData, ProfileDataKeys } from './models/types/profile-data';
 export {
   profileActions,

@@ -8,5 +8,10 @@
   "city": "City",
   "country":"Country",
   "ops":"Ops! Something went wrong :(",
-  "reloadPage":"Please, try to reload the page."
+  "reloadPage":"Please, try to reload the page.",
+  "INCORRECT_USER_NAME": "Incorrect user name",
+  "INCORRECT_USER_LASTNAME": "Incorrect user lastname",
+  "INCORRECT_AGE": "Incorrect user age",
+  "EMPTY_PROFILE_DATA": "Empty profile data",
+  "SERVER_ERROR": "Server error"
 }

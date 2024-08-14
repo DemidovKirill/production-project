@@ -10,6 +10,9 @@ import { updateProfileData } from 'pages/ProfilePage';
 import { Avatar } from 'shared/components/Avatar/Avatar';
 import { Currency } from 'entities/CurrencySelect';
 import { Country } from 'entities/CountrySelect';
+import {
+  getUserProfileValidateErrors,
+} from 'pages/ProfilePage/models/selectors/getUserProfileValidateErrors/getUserProfileValidateErrors';
 import { getUserProfileFormData } from '../models/selectors/getUserProfileFormData/getUserProfileFormData';
 import { profileActions, profileReducer } from '../models/slice/profile.slice';
 import { getUserProfileIsLoading } from '../models/selectors/getUserProfileIsLoading/getUserProfileIsLoading';
@@ -25,6 +28,7 @@ const ProfilePage = () => {
   useLazyReducerImports(reducerList);
   const profileFormData = useSelector(getUserProfileFormData);
   const profileError = useSelector(getUserProfileError);
+  const profileValidateErrors = useSelector(getUserProfileValidateErrors);
   const profileReadonly = useSelector(getUserProfileReadonly);
   const profileIsLoading = useSelector(getUserProfileIsLoading);
   const dispatch = useAppDispatch();
@@ -128,6 +132,7 @@ const ProfilePage = () => {
           onChangeAvatar={onChangeAvatar}
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
+          errors={profileValidateErrors}
         />
       </div>
     </div>

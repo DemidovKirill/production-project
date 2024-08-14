@@ -1,6 +1,11 @@
 {
   "aboutPageLink": "aboutPageLink",
+  "age": "age",
   "auth": "auth",
+  "avatar": "avatar",
+  "city": "city",
+  "firstname": "firstname",
+  "lastname": "lastname",
   "mainPageLink": "mainPageLink",
   "notFound": "notFound",
   "ops": "ops",

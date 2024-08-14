@@ -1,5 +1,5 @@
-import { Currency } from 'shared/constants/currency';
-import { Country } from '../../../../shared/constants/country';
+import { Currency } from 'entities/CurrencySelect/model/types/currency';
+import { Country } from 'entities/CountrySelect/models/types/country';
 
 export interface ProfileData {
   firstname?: string;
