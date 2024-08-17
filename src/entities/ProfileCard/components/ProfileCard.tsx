@@ -46,7 +46,9 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT_TYPE__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   if (isLoading) {
