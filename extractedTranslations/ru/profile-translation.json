@@ -1,0 +1,12 @@
+{
+  "age": "age",
+  "avatar": "avatar",
+  "city": "city",
+  "country": "country",
+  "currency": "currency",
+  "firstname": "firstname",
+  "lastname": "lastname",
+  "ops": "ops",
+  "reloadPage": "reloadPage",
+  "username": "username"
+}

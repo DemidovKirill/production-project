@@ -6,5 +6,5 @@ interface AuthFormProps {
 
 export const AuthFormLazy = lazy <FC<AuthFormProps>>(() => new Promise((resolve) => {
   // @ts-ignore
-  setTimeout(() => resolve(import(/* webpackChunkName: "auth_form" */'./AuthForm')), 1500);
+  setTimeout(() => resolve(import(/* webpackChunkName: "auth_form" */'./AuthForm')), 1000);
 }));

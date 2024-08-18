@@ -3,6 +3,7 @@
     position: absolute;
     top: 25px;
     left: 25px;
+    z-index: var(--sidebar-index);
 
     width: var(--sidebar-width);
     height: 90vh;
@@ -12,6 +13,8 @@
     background-color: var(--secondary-background);
 
     border-radius: 15px;
+
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
 
     transition: width 0.2s ease-in-out;
   }

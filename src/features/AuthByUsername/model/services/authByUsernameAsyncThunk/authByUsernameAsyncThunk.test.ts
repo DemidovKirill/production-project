@@ -12,6 +12,9 @@ describe('Auth by username AsyncThunk', () => {
   test('Success auth', async () => {
     const userData = { username: 'admin', id: '1' };
     const thunk = new TestAsyncThunk(authByUsernameAsyncThunk);
+
+    thunk.api.post.mockReturnValue(Promise.resolve({ data: userData }));
+
     const result = await thunk.callThunk({ username: 'admin', password: '123' });
 
     expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setUserData(userData));

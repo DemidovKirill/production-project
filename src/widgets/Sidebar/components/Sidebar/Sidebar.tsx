@@ -6,6 +6,8 @@ import ToggleArrow from 'shared/assets/icon/arrow.svg';
 import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
 import { SidebarLink } from 'widgets/Sidebar/components/SidebarLink/SidebarLink';
 import { SidebarLinkItems } from 'widgets/Sidebar/models/sidebar-link-items';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import style from './style.module.scss';
 
 interface SidebarProps {
@@ -13,7 +15,8 @@ interface SidebarProps {
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
-  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const [collapsed, setCollapsed] = useState<boolean>(true);
+  const isAuth = useSelector(getUserAuthData);
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
@@ -26,9 +29,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     >
       <div className={style.sidebar__content}>
         <div className={style.sidebar__links}>
-          {SidebarLinkItems.map((link) => (
-            <SidebarLink link={link} collapsed={collapsed} key={link.to} />
-          ))}
+          {SidebarLinkItems.map((link) => {
+            if (link.authOnly && !isAuth) {
+              return null;
+            }
+            return (
+              <SidebarLink link={link} collapsed={collapsed} key={link.to} />
+            );
+          })}
         </div>
         <div className={style.sidebar__switchers}>
           <ThemeSwitcher />

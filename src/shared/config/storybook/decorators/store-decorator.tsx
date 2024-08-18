@@ -2,7 +2,7 @@ import 'app/styles/index.scss';
 import { StoryFn } from '@storybook/react';
 import { StoreProvider, StoreSchema } from 'app/providers/Store';
 import { authReducer } from 'features/AuthByUsername';
-import { profileReducer } from 'entities/Profile';
+import { profileReducer } from 'pages/ProfilePage';
 import { ReducerList } from 'shared/lib/hooks/useLazyReducerImport';
 
 const defaultAsyncReducers: ReducerList = {

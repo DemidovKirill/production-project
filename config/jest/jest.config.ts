@@ -5,6 +5,7 @@ const config: Config = {
   globals: {
     __IS_DEV__: true,
     __API__: '',
+    __PROJECT_TYPE__: 'jest',
   },
   clearMocks: true,
   coveragePathIgnorePatterns: [

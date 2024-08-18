@@ -8,6 +8,7 @@ export interface SidebarLinkItem {
   to: string;
   translateKey: string;
   Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
+  authOnly?: boolean;
 }
 
 export const SidebarLinkItems: SidebarLinkItem[] = [
@@ -25,5 +26,6 @@ export const SidebarLinkItems: SidebarLinkItem[] = [
     to: RoutePath.profile,
     translateKey: 'profilePageLink',
     Icon: ProfileLinkIcon,
+    authOnly: true,
   },
 ];
