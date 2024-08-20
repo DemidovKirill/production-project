@@ -1,11 +1,5 @@
 .profile-page {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  justify-content: center;
   width: 100%;
-
-  background-color: var(--app-background);
 
   &__content {
     width: 100%;
