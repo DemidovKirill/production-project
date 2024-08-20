@@ -3,6 +3,7 @@ import { RoutePath } from 'shared/config/routerPathConfig';
 import HomeLinkIcon from 'shared/assets/icon/links/home.svg';
 import AboutLinkIcon from 'shared/assets/icon/links/about.svg';
 import ProfileLinkIcon from 'shared/assets/icon/links/profile.svg';
+import ArticlesLinkIcon from 'shared/assets/icon/links/articles.svg';
 
 export interface SidebarLinkItem {
   to: string;
@@ -26,6 +27,12 @@ export const SidebarLinkItems: SidebarLinkItem[] = [
     to: RoutePath.profile,
     translateKey: 'profilePageLink',
     Icon: ProfileLinkIcon,
+    authOnly: true,
+  },
+  {
+    to: RoutePath.articles,
+    translateKey: 'articlesPageLink',
+    Icon: ArticlesLinkIcon,
     authOnly: true,
   },
 ];

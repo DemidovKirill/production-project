@@ -5,12 +5,14 @@ import { Sidebar } from 'widgets/Sidebar';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { useTheme } from 'shared/contexts/theme-context';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { LOCAL_STORAGE_USER_DATA_KEY } from 'shared/constants/local-storage-keys';
 import { userActions } from 'entities/User';
+import { getUserIsMounted } from 'entities/User/models/selectors/getUserIsMounted/getUserIsMounted';
 
 const App = () => {
   const { theme } = useTheme();
+  const isMounted = useSelector(getUserIsMounted);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const App = () => {
       <div className="pade-content">
         <Sidebar />
         <ErrorBoundary>
-          <AppRouter />
+          {isMounted && <AppRouter />}
         </ErrorBoundary>
       </div>
     </div>

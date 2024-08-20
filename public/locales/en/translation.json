@@ -4,6 +4,7 @@
   "mainPageLink": "MAIN",
   "aboutPageLink": "ABOUT",
   "profilePageLink": "PROFILE",
+  "articlesPageLink": "ARTICLES",
   "notFound": "Page not found",
   "toggle": "Toggle",
   "pageError": "Page Error",

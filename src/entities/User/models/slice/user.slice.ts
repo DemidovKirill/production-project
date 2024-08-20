@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User, UserSchema } from 'entities/User';
 
-const initialState: UserSchema = { userData: null };
+const initialState: UserSchema = { userData: null, _isMounted: false };
 
 export const userSlice = createSlice({
   name: 'user',
@@ -12,6 +12,7 @@ export const userSlice = createSlice({
     },
     initUserData: (state: UserSchema, action: PayloadAction<User>) => {
       state.userData = action.payload;
+      state._isMounted = true;
     },
     logout: (state: UserSchema) => {
       state.userData = null;

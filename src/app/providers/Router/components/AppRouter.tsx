@@ -11,6 +11,8 @@ const AppRouter = () => (
       <Route path={routeConfig.about.path} element={routeConfig.about.element} />
       <Route element={<AppPrivateRoutes />}>
         <Route path={routeConfig.profile.path} element={routeConfig.profile.element} />
+        <Route path={routeConfig.articles.path} element={routeConfig.articles.element} />
+        <Route path={routeConfig.article_details.path} element={routeConfig.article_details.element} />
       </Route>
       <Route path={routeConfig.not_found.path} element={routeConfig.not_found.element} />
     </Routes>
