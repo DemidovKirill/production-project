@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { Article } from 'entities/Article';
 import style from './style.module.scss';
 
 const ArticleDetailsPage = () => {
@@ -7,7 +8,7 @@ const ArticleDetailsPage = () => {
 
   return (
     <div className={style['article-details-page']}>
-      {t('articleDetailsPage')}
+      <Article />
     </div>
   );
 };
