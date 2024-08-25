@@ -14,9 +14,9 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Как разработать Telegram-бота для генерации сложных паролей",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "img": "https://img.freepik.com/free-vector/monochrome-realistic-dark-tropical-leaves-background_23-2148438933.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1724457600&semt=ais_hybrid",
       "views": 1022,
       "createdAt": "26.02.2022",
       "type": ["IT"],

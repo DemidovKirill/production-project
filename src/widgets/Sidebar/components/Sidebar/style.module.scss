@@ -1,7 +1,7 @@
 .sidebar {
   &__container {
-    position: absolute;
-    top: 25px;
+    position: fixed;
+    top: 70px;
     left: 25px;
     z-index: var(--sidebar-index);
 

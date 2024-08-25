@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  height: 32px;
+  margin-bottom: 10px;
+
+  &__logo {
+    width: 32px;
+    border-radius: 50%;
+  }
+
+  &__author {
+    font: var(--font-m);
+    font-weight: bold;
+  }
+
+  &__data {
+    font: var(--font-m);
+  }
+}
