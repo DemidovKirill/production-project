@@ -3,8 +3,8 @@ import { ThunkConfig } from 'app/providers/Store';
 import { ValidateProfileDataError } from 'pages/ProfilePage';
 import { ArticleStructure } from 'entities/Article';
 
-export const fetchArticleDetails = createAsyncThunk<ArticleStructure, string, ThunkConfig<string>>(
-  'article/fetchArticleDetails',
+export const fetchArticleById = createAsyncThunk<ArticleStructure, string, ThunkConfig<string>>(
+  'article/fetchArticleById',
   async (articleId, thunkAPI) => {
     const { extra, rejectWithValue } = thunkAPI;
 

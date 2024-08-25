@@ -3,6 +3,7 @@ import { AuthSchema } from 'features/AuthByUsername';
 import { EnhancedStore } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'pages/ProfilePage';
 import { AxiosInstance } from 'axios';
+import { ArticleSchema } from 'entities/Article';
 import { createReducerManager } from './reducer-manager';
 
 export interface StoreSchema {
@@ -11,6 +12,7 @@ export interface StoreSchema {
   // LAZY
   auth?: AuthSchema;
   profile?: ProfileSchema;
+  article?: ArticleSchema;
 }
 
 export type ReducersKeys = keyof StoreSchema;
