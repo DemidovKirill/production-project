@@ -1,11 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { AppSelect } from 'shared/components/AppSelect/AppSelect';
 import { memo, useCallback } from 'react';
 import { Currency } from '../model/types/currency';
 
 interface CurrencySelectProps {
-  className?: string;
   value?: Currency;
   onChange?: (value: Currency) => void;
   readonly?: boolean;
@@ -18,7 +16,7 @@ const options = [
 ];
 
 export const CurrencySelect = memo(({
-  className, value, onChange, readonly,
+  value, onChange, readonly,
 }: CurrencySelectProps) => {
   const { t } = useTranslation('profile-translation');
 
@@ -28,7 +26,6 @@ export const CurrencySelect = memo(({
 
   return (
     <AppSelect
-      className={classNames('', {}, [className])}
       label={t('currency')}
       options={options}
       value={value}

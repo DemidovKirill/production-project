@@ -1,11 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { AppSelect } from 'shared/components/AppSelect/AppSelect';
 import { memo, useCallback } from 'react';
 import { Country } from '../models/types/country';
 
 interface CountrySelectProps {
-  className?: string;
   value?: Country;
   onChange?: (value: Country) => void;
   readonly?: boolean;
@@ -19,7 +17,7 @@ const options = [
 ];
 
 export const CountrySelect = memo(({
-  className, value, onChange, readonly,
+  value, onChange, readonly,
 }: CountrySelectProps) => {
   const { t } = useTranslation('profile-translation');
 
@@ -29,7 +27,6 @@ export const CountrySelect = memo(({
 
   return (
     <AppSelect
-      className={classNames('', {}, [className])}
       label={t('country')}
       options={options}
       value={value}

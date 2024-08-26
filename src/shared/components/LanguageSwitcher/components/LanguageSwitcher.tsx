@@ -1,13 +1,8 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { AppButton, ButtonAppearance } from 'shared/components/AppButton/AppButton';
 
-interface LanguageSwitcherProps {
-  className?: string
-}
-
-export const LanguageSwitcher = memo(({ className }: LanguageSwitcherProps) => {
+export const LanguageSwitcher = memo(() => {
   const { i18n } = useTranslation();
 
   const changeLanguage = () => {
@@ -16,7 +11,6 @@ export const LanguageSwitcher = memo(({ className }: LanguageSwitcherProps) => {
 
   return (
     <AppButton
-      className={classNames('', {}, [className])}
       onClick={changeLanguage}
       appearance={[ButtonAppearance.CLEAR]}
     >

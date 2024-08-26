@@ -35,12 +35,14 @@ export const AppButton = memo((props: AppButtonProps) => {
     [style['with-hover']]: withHover,
   };
 
+  const additional = appearance.map((cls) => style[cls]);
+
   return (
     <button
       type="button"
       className={classNames(style['app-button'], mods, [
         className,
-        ...appearance,
+        ...additional,
       ])}
       {...otherProps}
     >
