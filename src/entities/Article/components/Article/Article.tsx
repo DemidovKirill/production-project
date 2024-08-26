@@ -11,6 +11,13 @@ import {
 } from 'entities/Article/models/selectors/articleDetails';
 import { ArticleHeader } from 'entities/Article/components/ArticleHeader/ArticleHeader';
 import { Skeleton } from 'shared/components/Skeleton/Skeleton';
+import { ArticleBlock, ArticleBlockType } from 'entities/Article/models/types/article';
+import {
+  ArticleBlockTextComponent,
+} from 'entities/Article/components/ArticleBlockTextComponent/ArticleBlockTextComponent';
+import {
+  ArticleBlockImageComponent,
+} from 'entities/Article/components/ArticleBlockImageComponent/ArticleBlockImageComponent';
 import style from './style.module.scss';
 
 interface ArticleProps {
@@ -20,6 +27,28 @@ interface ArticleProps {
 
 const reducerList: ReducerList = {
   article: articleReducer,
+};
+
+const renderBlock = (blocks?: ArticleBlock[]) => {
+  if (!blocks) {
+    return null;
+  }
+
+  return blocks.map((block) => {
+    switch (block.type) {
+    case ArticleBlockType.TEXT:
+      return (
+        <ArticleBlockTextComponent key={block.id} block={block} />
+      );
+    case ArticleBlockType.CODE:
+      return null;
+    case ArticleBlockType.IMAGE:
+      return (
+        <ArticleBlockImageComponent key={block.id} block={block} />
+      );
+    default: return null;
+    }
+  });
 };
 
 export const Article = memo((props: ArticleProps) => {
@@ -59,24 +88,7 @@ export const Article = memo((props: ArticleProps) => {
               <Skeleton height="280px" />
             </>
           )
-          : (
-            <>
-              <img className={style.article__image} src={article?.img} alt="" />
-              <p className={style.article__text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusantium animi asperiores aut beatae cupiditate dolorem,
-                doloremque et explicabo id illum ipsam,
-                ipsum itaque iure laborum maiores minus nisi nostrum odio possimus quasi quibusdam quos sapiente unde!
-                Ab aliquid architecto at est expedita explicabo harum iure,
-                laboriosam magnam minus necessitatibus odio officiis provident ratione repellat rerum sint?
-                Accusamus assumenda, dolore magni quae quod reiciendis voluptas.
-                Aliquid at autem commodi deleniti deserunt dignissimos doloremque,
-                dolores doloribus exercitationem illum incidunt ipsa magnam quis reiciendis repellendus similique totam,
-                ut, voluptatem? Alias beatae consectetur culpa cupiditate deserunt eligendi eveniet numquam,
-                perferendis, quae ratione reiciendis sunt?
-              </p>
-            </>
-          )}
+          : renderBlock(article?.blocks)}
       </main>
     </section>
   );

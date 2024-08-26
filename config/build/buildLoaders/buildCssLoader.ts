@@ -9,7 +9,7 @@ export const buildCssLoader = (isDev: boolean) => ({
       options: {
         modules: {
           auto: /\.module\./,
-          localIdentName: '[local]',
+          localIdentName: '[local]__[hash:base64:5]',
         },
       },
     },
