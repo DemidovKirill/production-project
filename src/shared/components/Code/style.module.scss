@@ -1,0 +1,24 @@
+.code {
+  position: relative;
+  padding: 20px;
+  overflow: auto;
+  background: var(--accent-color-link-opacity-30);
+  border: 1px solid var(--primary-color);
+
+  &__copy-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: all 0.1s linear;
+
+    &:hover {
+      transition: all 0.1s linear;
+      transform: scale(1.2);
+    }
+
+    &:active {
+      transition: all 0.1s linear;
+      transform: scale(1);
+    }
+  }
+}

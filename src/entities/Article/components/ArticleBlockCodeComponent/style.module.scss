@@ -1,0 +1,10 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 35px;
+
+  &__title {
+    color: var(--accent-color);
+  }
+}

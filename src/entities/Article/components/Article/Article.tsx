@@ -18,6 +18,9 @@ import {
 import {
   ArticleBlockImageComponent,
 } from 'entities/Article/components/ArticleBlockImageComponent/ArticleBlockImageComponent';
+import {
+  ArticleBlockCodeComponent,
+} from 'entities/Article/components/ArticleBlockCodeComponent/ArticleBlockCodeComponent';
 import style from './style.module.scss';
 
 interface ArticleProps {
@@ -41,7 +44,9 @@ const renderBlock = (blocks?: ArticleBlock[]) => {
         <ArticleBlockTextComponent key={block.id} block={block} />
       );
     case ArticleBlockType.CODE:
-      return null;
+      return (
+        <ArticleBlockCodeComponent key={block.id} block={block} />
+      );
     case ArticleBlockType.IMAGE:
       return (
         <ArticleBlockImageComponent key={block.id} block={block} />
